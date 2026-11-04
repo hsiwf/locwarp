@@ -276,8 +276,8 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
   // unbounded loop. Updated on `lap_complete` WS events from the backend.
   const [lapProgress, setLapProgress] = useState<{ current: number; total: number | null } | null>(null)
   // User's preferred lap count for the Loop mode start button. Null / 0 = no limit.
-  // 多點路徑 lap setting, three states:
-  //   0    → single pass, original 多點導航 (routes to the multiStop backend)
+  // 多点路径 lap setting, three states:
+  //   0    → single pass, original 多点导航 (routes to the multiStop backend)
   //   null → infinite loop
   //   N>0  → run N laps then stop
   // Default is 0 (single pass). 'inf' is the on-disk marker for the null state.
@@ -297,7 +297,7 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
     } catch { /* ignore quota errors */ }
   }, [])
 
-  // 種花模式 settings — all persisted so they survive a restart. Each
+  // 种花模式 settings — all persisted so they survive a restart. Each
   // flower (waypoint) is circled at `flowerRadius` metres using
   // `flowerSegments` vertices, `flowerCircles` laps; the whole list runs
   // `flowerRounds` times. The device waits `flowerPreWait` before moving
@@ -598,7 +598,7 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
         // Uses localStorage to get current language (hooks don't have i18n context easily here)
         setError((typeof localStorage !== 'undefined' && localStorage.getItem('locwarp.lang') === 'en')
           ? 'Wi-Fi tunnel dropped, please reconnect'
-          : 'WiFi Tunnel 連線中斷,請重新建立')
+          : 'WiFi Tunnel 连接中断,请重新建立')
         break
       }
       case 'device_disconnected': {
@@ -613,7 +613,7 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
           const isEn = typeof localStorage !== 'undefined' && localStorage.getItem('locwarp.lang') === 'en'
           setError(isEn
             ? 'Device disconnected (USB unplugged or tunnel died), please reconnect USB'
-            : '裝置連線中斷(USB 拔除或 Tunnel 死亡),請重新插上 USB')
+            : '设备连接中断(USB 拔除或 Tunnel 死亡),请重新插上 USB')
           setStatus((prev) => ({ ...prev, running: false, paused: false }))
         } else {
           // Clear any stale banner in case a previous lost-all event left it
@@ -664,7 +664,7 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
           // mode the surviving device is still running the same sim, so
           // keep routePath / destination AND keep running/paused alone:
           // flipping running to false here would revert the toolbar's
-          // 停止 button back to 開始 even though the other device is
+          // 停止 button back to 开始 even though the other device is
           // still actively running the simulation. Just record the new
           // state for completeness; the global running flag is reset by
           // the device_disconnected handler when remaining_count hits 0.
@@ -719,8 +719,8 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
   // Load a saved route: switch into the route (Loop) mode AND populate the
   // waypoint list in one shot. Done directly (not via setMode) so the route
   // survives even when "keep path points" is off — setMode would otherwise
-  // wipe the waypoints we just set. Fixes "press 開始 does nothing" when the
-  // app was still in 瞬間移動 at the moment a route was loaded.
+  // wipe the waypoints we just set. Fixes "press 开始 does nothing" when the
+  // app was still in 瞬间移动 at the moment a route was loaded.
   const loadRoute = useCallback((wps: LatLng[]) => {
     _setMode(SimMode.Loop)
     setDestination(null)
@@ -802,7 +802,7 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
     async (wps: LatLng[], stopDuration: number, loop: boolean) => {
       setError(null)
       try {
-        // 多點導航 is merged into the 路徑 (Loop) mode, so keep the UI mode on
+        // 多点导航 is merged into the 路径 (Loop) mode, so keep the UI mode on
         // Loop — this is just the single-pass backend path for "0 圈".
         _setMode(SimMode.Loop)
         // See startLoop — do not overwrite UI waypoints with the backend route.
@@ -1051,7 +1051,7 @@ export function useSimulation(subscribe?: WsSubscribe, primaryUdid?: string | nu
   }, [fanout, preSyncStart, moveMode, customSpeedKmh, speedMinKmh, speedMaxKmh, pauseLoop, straightLine, loopLapCount, routeEngine, jumpMode, jumpPreDelay, jumpPostDelay])
   const multiStopAll = useCallback(async (udids: string[], wps: LatLng[], dur: number, loop: boolean) => {
     await preSyncStart(udids)
-    // Single-pass path of the merged 路徑 mode — use the shared pauseLoop setting.
+    // Single-pass path of the merged 路径 mode — use the shared pauseLoop setting.
     return fanout(udids, 'multistop', (u) => api.multiStop(wps, moveMode, dur, loop, { speed_kmh: customSpeedKmh, speed_min_kmh: speedMinKmh, speed_max_kmh: speedMaxKmh }, { pause_enabled: pauseLoop.enabled, pause_min: pauseLoop.min, pause_max: pauseLoop.max }, u, straightLine, routeEngine, { jump_mode: jumpMode, jump_pre_delay: jumpPreDelay, jump_post_delay: jumpPostDelay }))
   }, [fanout, preSyncStart, moveMode, customSpeedKmh, speedMinKmh, speedMaxKmh, pauseLoop, straightLine, routeEngine, jumpMode, jumpPreDelay, jumpPostDelay])
   const flowerAll = useCallback(async (udids: string[], wps: LatLng[]) => {

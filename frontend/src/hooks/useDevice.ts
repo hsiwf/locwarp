@@ -53,7 +53,7 @@ export function useDevice(subscribe?: WsSubscribe) {
         if (udids.length === 0) {
           setConnectedDevice(null)
           setDevices((prev) => prev.map((d) => ({ ...d, is_connected: false })))
-          // Also clear the WiFi tunnel list so the 連線 page doesn't keep
+          // Also clear the WiFi tunnel list so the 连接 page doesn't keep
           // showing a device that was just disconnected (issue: right-click
           // disconnect left the tunnel chip showing "still connected").
           setTunnels([])
@@ -476,7 +476,7 @@ export function useDevice(subscribe?: WsSubscribe) {
   // device, which then receives the auto-sync replay (a fresh sim from
   // its current position) and the frontend lets that REPLAY's events
   // through the udid filter, overwriting the surviving device's polyline
-  // and "瞬移回起點 / 慢慢走回起點" on screen. Sticky primary keeps the
+  // and "瞬移回起点 / 慢慢走回起点" on screen. Sticky primary keeps the
   // surviving device in charge so the rejoining one's replay stays
   // filtered out and invisible until the user explicitly chooses to
   // switch.

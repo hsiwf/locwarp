@@ -29,7 +29,7 @@ interface Props {
  * Popover panel for picking the map "current position" avatar.
  *
  * Flow is staged: click a preset / upload a PNG stages the change, nothing
- * is applied until the user hits 儲存. Custom PNG is kept in localStorage
+ * is applied until the user hits 保存. Custom PNG is kept in localStorage
  * in a separate slot from the active selection, so switching to a preset
  * never wipes the user's uploaded image (next upload overwrites it).
  */
@@ -37,7 +37,7 @@ const UserAvatarPicker: React.FC<Props> = ({ avatar, customPng, onSave, onClose,
   const t = useT();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [uploading, setUploading] = useState(false);
-  // Staged values; both committed on 儲存.
+  // Staged values; both committed on 保存.
   const [pending, setPending] = useState<UserAvatar>(avatar);
   const [pendingCustom, setPendingCustom] = useState<string | null>(customPng);
   useEffect(() => { setPending(avatar); setPendingCustom(customPng); }, [avatar, customPng]);

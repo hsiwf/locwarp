@@ -32,7 +32,7 @@ def _now_iso() -> str:
 def _default_category() -> RouteCategory:
     return RouteCategory(
         id="default",
-        name="預設",
+        name="默认",
         color="#6c8cff",
         sort_order=0,
         created_at=_now_iso(),
@@ -300,7 +300,7 @@ class RouteManager:
           - Routes: imported with their original id when free; on id
             collision a fresh id is minted so the existing route is
             preserved. On name collision inside the same category the
-            imported route gets a `(匯入)` suffix so both stay visible.
+            imported route gets a `(导入)` suffix so both stay visible.
           - A route pointing at an unknown category_id falls back to default.
         """
         try:
@@ -327,7 +327,7 @@ class RouteManager:
                 if s.category_id == r.category_id and s.name == r.name
             ]
             if siblings:
-                r.name = f"{r.name} (匯入)"
+                r.name = f"{r.name} (导入)"
             if not r.created_at:
                 r.created_at = _now_iso()
             self.store.routes.append(r)

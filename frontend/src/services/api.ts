@@ -19,44 +19,44 @@ async function fetchWithRetry(url: string, opts: RequestInit, maxAttempts = 15):
 // Bilingual backend error code → user-facing message.
 // Looks up the currently selected language from localStorage (set by i18n/index.ts).
 const ERROR_I18N: Record<string, { zh: string; en: string }> = {
-  python313_missing: { zh: '需要 Python 3.13+ 才能啟動 WiFi Tunnel', en: 'Python 3.13+ is required to start the Wi-Fi tunnel' },
-  tunnel_script_missing: { zh: '找不到 wifi_tunnel.py 腳本', en: 'wifi_tunnel.py script not found' },
-  tunnel_spawn_failed: { zh: '無法啟動 Tunnel 進程', en: 'Failed to spawn tunnel process' },
-  tunnel_exited: { zh: 'Tunnel 進程異常結束', en: 'Tunnel process exited unexpectedly' },
-  tunnel_timeout: { zh: 'Tunnel 啟動逾時,請確認 iPhone 解鎖且與電腦同網段', en: 'Tunnel startup timed out, ensure iPhone is unlocked and on the same subnet' },
-  no_device: { zh: '尚未連接任何 iOS 裝置,請先透過 USB 連線', en: 'No iOS device connected, connect via USB first' },
-  no_position: { zh: '尚未取得目前位置,請先跳點到一個座標', en: 'No current position, teleport to a coordinate first' },
-  tunnel_lost: { zh: 'WiFi Tunnel 連線中斷,請重新建立', en: 'Wi-Fi tunnel dropped, please reconnect' },
-  cooldown_active: { zh: '冷卻中,請等待後再跳點', en: 'Cooldown active, wait before teleporting' },
-  geocode_timeout: { zh: '地址搜尋服務回應逾時,請稍後再試或換一個搜尋來源', en: 'Address search timed out, try again later or switch the search provider' },
-  geocode_unavailable: { zh: '地址搜尋服務暫時無法使用,請稍後再試或換一個搜尋來源', en: 'Address search service is unavailable, try again later or switch the search provider' },
-  repair_needs_usb: { zh: '重新配對需要 USB, 請先用線連接 iPhone', en: 'Re-pair needs USB, please connect the iPhone first' },
-  usbmux_unavailable: { zh: '無法列出 USB 裝置,請確認驅動與 Apple Mobile Device Service 是否正常', en: 'Cannot list USB devices, check iTunes/Apple Mobile Device Service' },
-  trust_failed: { zh: 'USB 信任失敗, 請在 iPhone 上點「信任」後再試', en: 'USB trust failed, tap Trust on the iPhone and retry' },
-  remote_pair_failed: { zh: 'RemotePairing 記錄重建失敗, 請以系統管理員身分重啟 LocWarp', en: 'RemotePairing record rebuild failed, restart LocWarp as Administrator' },
-  device_lost: { zh: '裝置連線中斷(USB 拔除或 Tunnel 死亡),請重新插上 USB 後再操作', en: 'Device connection lost (USB unplugged or tunnel died), please reconnect USB and try again' },
+  python313_missing: { zh: '需要 Python 3.13+ 才能启动 WiFi Tunnel', en: 'Python 3.13+ is required to start the Wi-Fi tunnel' },
+  tunnel_script_missing: { zh: '找不到 wifi_tunnel.py 脚本', en: 'wifi_tunnel.py script not found' },
+  tunnel_spawn_failed: { zh: '无法启动 Tunnel 进程', en: 'Failed to spawn tunnel process' },
+  tunnel_exited: { zh: 'Tunnel 进程异常结束', en: 'Tunnel process exited unexpectedly' },
+  tunnel_timeout: { zh: 'Tunnel 启动超时,请确认 iPhone 解锁且与电脑同网段', en: 'Tunnel startup timed out, ensure iPhone is unlocked and on the same subnet' },
+  no_device: { zh: '尚未连接任何 iOS 设备,请先通过 USB 连接', en: 'No iOS device connected, connect via USB first' },
+  no_position: { zh: '尚未取得当前位置,请先跳点到一个坐标', en: 'No current position, teleport to a coordinate first' },
+  tunnel_lost: { zh: 'WiFi Tunnel 连接中断,请重新建立', en: 'Wi-Fi tunnel dropped, please reconnect' },
+  cooldown_active: { zh: '冷却中,请等待后再跳点', en: 'Cooldown active, wait before teleporting' },
+  geocode_timeout: { zh: '地址搜索服务回应超时,请稍后再试或换一个搜索来源', en: 'Address search timed out, try again later or switch the search provider' },
+  geocode_unavailable: { zh: '地址搜索服务暂时无法使用,请稍后再试或换一个搜索来源', en: 'Address search service is unavailable, try again later or switch the search provider' },
+  repair_needs_usb: { zh: '重新配对需要 USB, 请先用线连接 iPhone', en: 'Re-pair needs USB, please connect the iPhone first' },
+  usbmux_unavailable: { zh: '无法列出 USB 设备,请确认驱动与 Apple Mobile Device Service 是否正常', en: 'Cannot list USB devices, check iTunes/Apple Mobile Device Service' },
+  trust_failed: { zh: 'USB 信任失败, 请在 iPhone 上点「信任」后再试', en: 'USB trust failed, tap Trust on the iPhone and retry' },
+  remote_pair_failed: { zh: 'RemotePairing 记录重建失败, 请以系统管理员身份重启 LocWarp', en: 'RemotePairing record rebuild failed, restart LocWarp as Administrator' },
+  device_lost: { zh: '设备连接中断(USB 拔除或 Tunnel 死亡),请重新插上 USB 后再操作', en: 'Device connection lost (USB unplugged or tunnel died), please reconnect USB and try again' },
   device_lost_tunnel_dead: {
-    zh: 'WiFi 連線中斷,請確認手機 WiFi 與電腦同網段、解鎖手機後再試',
+    zh: 'WiFi 连接中断,请确认手机 WiFi 与电脑同网段、解锁手机后再试',
     en: 'Wi-Fi tunnel dropped — confirm the iPhone is on the same subnet, unlock the screen, and retry',
   },
   device_lost_lockdown_dead: {
-    zh: '裝置回應停止,請解鎖手機螢幕後再試',
+    zh: '设备回应停止,请解锁手机屏幕后再试',
     en: 'Device stopped responding — unlock the iPhone screen and retry',
   },
   device_lost_ddi_missing: {
-    zh: 'Developer Disk Image 未掛載,請重新插拔 USB 或重新啟動裝置',
+    zh: 'Developer Disk Image 未挂载,请重新插拔 USB 或重新启动设备',
     en: 'Developer Disk Image is not mounted — replug USB or reboot the device',
   },
   device_lost_usb_gone: {
-    zh: 'USB 已拔除,請重新插上後再操作',
+    zh: 'USB 已拔除,请重新插上后再操作',
     en: 'USB cable disconnected — plug it back in and retry',
   },
   max_devices_reached: {
-    zh: '已連接最多 3 台裝置',
+    zh: '已连接最多 3 台设备',
     en: 'Maximum 3 devices connected',
   },
   ios_unsupported: {
-    zh: '裝置 iOS 版本過舊,LocWarp 僅支援 iOS 16 以上。請升級 iOS 後再試。',
+    zh: '设备 iOS 版本过旧,LocWarp 仅支持 iOS 16 以上。请升级 iOS 后再试。',
     en: 'This device runs an unsupported iOS version. LocWarp requires iOS 16 or later. Please update and try again.',
   },
 }
@@ -75,7 +75,7 @@ function currentLang(): 'zh' | 'en' {
 function maybeAttachDevModeHint(msg: string): string {
   if (/InvalidService/i.test(msg)) {
     const hint = currentLang() === 'zh'
-      ? ' (請檢查 iPhone 開發者模式是否已啟用:設定 → 隱私權與安全性 → 開發者模式)'
+      ? ' (请检查 iPhone 开发者模式是否已启用:设置 → 隐私权与安全性 → 开发者模式)'
       : ' (Check that Developer Mode is enabled on the iPhone: Settings → Privacy & Security → Developer Mode)'
     return msg + hint
   }
@@ -337,7 +337,7 @@ export const bookmarkCategoriesGpxZipUrl = (categoryIds: string[]) =>
 
 // Recent places: last 20 flights.
 // kind distinguishes the entry point AND the action, so the UI can show
-// a clear label ("座標 / 瞬移 / 導航 / 地址") and re-fly with the same
+// a clear label ("坐标 / 瞬移 / 导航 / 地址") and re-fly with the same
 // action the user originally invoked.
 export type RecentKind = 'teleport' | 'navigate' | 'search' | 'coord_teleport' | 'coord_navigate'
 export interface RecentEntry { lat: number; lng: number; kind: RecentKind; name: string; ts: number }

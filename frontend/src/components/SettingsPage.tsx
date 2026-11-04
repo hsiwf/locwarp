@@ -15,7 +15,7 @@ interface Props {
   // Fires the AMFI "reveal Developer Mode" request against the connected
   // iPhone. App resolves the target device + surfaces a toast if none is
   // connected. Lives here permanently (not gated on dev-mode state) so the
-  // option is always reachable from 設定.
+  // option is always reachable from 设置.
   onEnableDeveloperMode: () => void | Promise<void>;
 }
 
@@ -44,7 +44,7 @@ const Help: React.FC<{ title: string }> = ({ title }) => (
 );
 
 /**
- * Settings page rendered as the "設定" tab of the left navigation rail.
+ * Settings page rendered as the "设置" tab of the left navigation rail.
  * Uses iOS-style grouped inset cards. Hosts the genuinely set-once options;
  * frequently-changed controls (path source, geocode provider, connection
  * toggles) deliberately stay in their contextual pages.
@@ -57,7 +57,7 @@ const SettingsPage: React.FC<Props> = ({ onOpenLogFolder, onEnableDeveloperMode 
   const [renderDirty, setRenderDirty] = useState(false);
   const update = useUpdateCheck();
 
-  // Startup map view (起始地圖位置) — moved here from the status bar.
+  // Startup map view (起始地图位置) — moved here from the status bar.
   const [initOpen, setInitOpen] = useState(false);
   const [initVal, setInitVal] = useState('');
   const [initErr, setInitErr] = useState<string | null>(null);
@@ -149,7 +149,7 @@ const SettingsPage: React.FC<Props> = ({ onOpenLogFolder, onEnableDeveloperMode 
         </button>
       </div>
 
-      {/* 應用程式 */}
+      {/* 应用程序 */}
       <div className="ios-group-label">{t('settings.group_app')}</div>
       <div className="ios-card">
         <div className="ios-row">

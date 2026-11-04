@@ -31,7 +31,7 @@ class BookmarkManager:
             categories=[
                 BookmarkCategory(
                     id="default",
-                    name="預設",
+                    name="默认",
                     color="#6c8cff",
                     sort_order=0,
                     created_at=_now_iso(),

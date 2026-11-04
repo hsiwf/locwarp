@@ -124,7 +124,7 @@ def _firewall_add_rule(port: int) -> tuple[bool, str]:
     if platform.system() != "Windows":
         return False, "Windows-only"
     import subprocess
-    # netsh on TC Windows outputs UTF-8 (Chinese headers like "規則名稱:"),
+    # netsh on TC Windows outputs UTF-8 (Chinese headers like "规则名称:"),
     # but Python's text mode defaults to cp950 there and dies on the first
     # multi-byte char with UnicodeDecodeError in the stdout reader thread,
     # silently leaving proc.stdout = "". That made the dedupe check below
@@ -191,7 +191,7 @@ def _firewall_add_rule(port: int) -> tuple[bool, str]:
             return True, "rule added"
         msg = (proc.stderr or proc.stdout or "").strip()
         if "需要" in msg or "elevated" in msg.lower() or "admin" in msg.lower():
-            return False, "需以系統管理員身分執行 LocWarp"
+            return False, "需以系统管理员身份执行 LocWarp"
         return False, msg or f"netsh exit code {proc.returncode}"
     except Exception as e:
         logger.exception("firewall add rule failed")
@@ -434,7 +434,7 @@ def _engine():
     eng = app_state.simulation_engine
     if eng is None:
         raise HTTPException(status_code=503, detail={"code": "no_device",
-                                                     "message": "尚未連接 iOS 裝置"})
+                                                     "message": "尚未连接 iOS 设备"})
     return eng
 
 
@@ -446,7 +446,7 @@ def _all_engines():
     from main import app_state
     if not app_state.simulation_engines:
         raise HTTPException(status_code=503, detail={"code": "no_device",
-                                                     "message": "尚未連接 iOS 裝置"})
+                                                     "message": "尚未连接 iOS 设备"})
     return list(app_state.simulation_engines.values())
 
 
@@ -588,7 +588,7 @@ async def phone_navigate(
     if all(e.current_position is None for e in engines):
         raise HTTPException(status_code=400, detail={
             "code": "no_position",
-            "message": "尚未有虛擬位置,請先瞬移或飛座標",
+            "message": "尚未有虚拟位置,请先瞬移或飞坐标",
         })
     from models.schemas import Coordinate, MovementMode
     try:

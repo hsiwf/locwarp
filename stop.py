@@ -1,5 +1,5 @@
 """
-LocWarp 一鍵停止
+LocWarp 一键停止
 """
 
 import os
@@ -27,4 +27,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    input("  按 Enter 離開...")
+    input("  按 Enter 离开...")

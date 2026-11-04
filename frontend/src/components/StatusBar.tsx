@@ -64,7 +64,7 @@ function stateToMode(state: string): SimMode | null {
     case 'navigating': return SimMode.Navigate;
     case 'looping': return SimMode.Loop;
     // Single-pass (0 圈) runs on the multi_stop backend but is the merged
-    // 多點路徑 mode in the UI, so show the Loop label.
+    // 多点路径 mode in the UI, so show the Loop label.
     case 'multi_stop': return SimMode.Loop;
     case 'random_walk': return SimMode.RandomWalk;
     case 'flower': return SimMode.Flower;
@@ -345,7 +345,7 @@ const StatusBar: React.FC<StatusBarProps> = ({
         if (Math.abs(diffSec) < 3600) return null;
         const diffH = Math.round(diffSec / 3600);
         const sign = diffH >= 0 ? '+' : '';
-        const lang = (typeof localStorage !== 'undefined' && localStorage.getItem('locwarp.lang') === 'en') ? 'en' : 'zh-TW';
+        const lang = (typeof localStorage !== 'undefined' && localStorage.getItem('locwarp.lang') === 'en') ? 'en' : 'zh-CN';
         let timeStr = '';
         let zoneAbbr = timezoneZone;
         let dateStr = '';
@@ -357,7 +357,7 @@ const StatusBar: React.FC<StatusBarProps> = ({
           }).format(now);
         } catch { /* leave blank */ }
         try {
-          // zh-TW with month: 'numeric' renders "5/8"; en with month: 'short'
+          // zh-CN with month: 'numeric' renders "5/8"; en with month: 'short'
           // renders "May 8". Both are compact enough for the status bar.
           dateStr = new Intl.DateTimeFormat(lang, {
             timeZone: timezoneZone,
@@ -452,7 +452,7 @@ const StatusBar: React.FC<StatusBarProps> = ({
             </svg>
             {dualDevice ? t('status.restore_all') : t('status.restore')}
           </button>
-          {/* Log 資料夾 + 起始地圖位置 moved to the Settings page (issue #34). */}
+          {/* Log 文件夹 + 起始地图位置 moved to the Settings page (issue #34). */}
           {/* Locate PC: detect this PC's lat/lng (Wi-Fi positioning) */}
           {(onLocatePcFly || onLocatePcPanOnly) && (
             <button
@@ -482,9 +482,9 @@ const StatusBar: React.FC<StatusBarProps> = ({
               {t('status.locate_pc')}
             </button>
           )}
-          {/* 手機操控 — opens the phone-control pairing modal */}
+          {/* 手机操控 — opens the phone-control pairing modal */}
           <PhoneControlButton />
-          {/* 地圖釘 / 使用者頭像 — opens the avatar picker panel */}
+          {/* 地图钉 / 用户头像 — opens the avatar picker panel */}
           {onOpenAvatarPicker && (
             <button
               onClick={onOpenAvatarPicker}
@@ -509,7 +509,7 @@ const StatusBar: React.FC<StatusBarProps> = ({
               {t('status.avatar')}
             </button>
           )}
-          {/* 設定 moved to the top navigation bar's 設定 tab (issue #34). */}
+          {/* 设置 moved to the top navigation bar's 设置 tab (issue #34). */}
         </>
       )}
 
@@ -589,7 +589,7 @@ const StatusBar: React.FC<StatusBarProps> = ({
         const diffSec = gmtOffsetSeconds - localOffsetSec;
         const diffH = Math.round(diffSec / 3600);
         const sign = diffH >= 0 ? '+' : '';
-        const lang = (typeof localStorage !== 'undefined' && localStorage.getItem('locwarp.lang') === 'en') ? 'en' : 'zh-TW';
+        const lang = (typeof localStorage !== 'undefined' && localStorage.getItem('locwarp.lang') === 'en') ? 'en' : 'zh-CN';
         let zoneFullName = timezoneZone;
         let timeStr = '';
         let dateStr = '';

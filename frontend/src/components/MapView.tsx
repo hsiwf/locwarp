@@ -53,7 +53,7 @@ interface MapViewProps {
   destination: Position | null;
   waypoints: Waypoint[];
   routePath: Position[];
-  // 種花模式 preview: one segmented polygon (the circle the avatar will walk)
+  // 种花模式 preview: one segmented polygon (the circle the avatar will walk)
   // per waypoint, drawn so the user sees the configured radius + segment
   // count before / while running.
   flowerPreview?: Position[][];
@@ -136,7 +136,7 @@ interface MapViewProps {
 }
 
 // Transport (Start / Stop / Pause / Resume) — bottom-left of the map,
-// directly above the coord-input strip. Mockup S6 (玻璃膠囊) base with
+// directly above the coord-input strip. Mockup S6 (玻璃胶囊) base with
 // the active state filled D8 (sliding highlight). Width fits content
 // only — we don't want the whole row to span the coord input below.
 function TransportButtons({
@@ -410,7 +410,7 @@ const MapView: React.FC<MapViewProps> = ({
 
   const [recentOpen, setRecentOpen] = useState(false);
   // Clear-button confirmation state. First click flips the single
-  // "清空" button into a pair of explicit "確定清空" / "取消" buttons.
+  // "清空" button into a pair of explicit "确定清空" / "取消" buttons.
   // User has to pick one — no auto-revert, no stale timers.
   const [clearConfirming, setClearConfirming] = useState(false);
   useEffect(() => {
@@ -732,7 +732,7 @@ const MapView: React.FC<MapViewProps> = ({
         '&copy; <a href="https://versatiles.org/" target="_blank" rel="noopener">VersaTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
     }) as L.Layer;
 
-    // NLSC 通用版電子地圖 — Taiwan government basemap (內政部國土測繪中心).
+    // NLSC 通用版电子地图 — Taiwan government basemap (内政部国土测绘中心).
     // No API key, no quota, completely free. Coverage is Taiwan-only:
     // the rest of the world renders as a blank/grey backdrop. WMTS uses
     // the {y}/{x} (row/col) ordering convention same as ESRI.
@@ -742,7 +742,7 @@ const MapView: React.FC<MapViewProps> = ({
         ...baseOpts,
         maxZoom: 20,
         attribution:
-          '&copy; <a href="https://www.nlsc.gov.tw/" target="_blank" rel="noopener">內政部國土測繪中心</a>',
+          '&copy; <a href="https://www.nlsc.gov.tw/" target="_blank" rel="noopener">内政部国土测绘中心</a>',
       },
     );
 
@@ -768,15 +768,15 @@ const MapView: React.FC<MapViewProps> = ({
     // [storage key, picker label, layer] in picker order.
     const layerDefs: Array<[string, string, L.Layer]> = [
       ['osm', 'OSM', osmLayer],
-      ['google', 'Google 圖磚 (測試) / Google Tiles (Beta)', googleLayer],
+      ['google', 'Google 瓦片 (测试) / Google Tiles (Beta)', googleLayer],
       ['esri_street', 'ESRI 街道 / Street Map', esriStreetLayer],
-      ['esri', 'ESRI 衛星 / Satellite', esriSatLayer],
+      ['esri', 'ESRI 卫星 / Satellite', esriSatLayer],
       ['liberty', 'OpenFreeMap Liberty', libertyLayer],
       ['bright', 'OpenFreeMap Bright', brightLayer],
       ['positron', 'OpenFreeMap Positron', positronLayer],
       ['versa', 'VersaTiles Colorful', versaLayer],
-      ['nlsc', 'NLSC 台灣電子地圖', nlscLayer],
-      ['gsi', 'GSI 日本地理院地圖', gsiLayer],
+      ['nlsc', 'NLSC 台湾电子地图', nlscLayer],
+      ['gsi', 'GSI 日本地理院地图', gsiLayer],
     ];
     const layers: Record<string, L.Layer> = {};
     for (const [, label, layer] of layerDefs) layers[label] = layer;
@@ -895,7 +895,7 @@ const MapView: React.FC<MapViewProps> = ({
   }, []);
 
   // Update current position marker — move existing marker instead of recreating.
-  // When currentPosition becomes null (e.g. after 一鍵還原) remove the marker.
+  // When currentPosition becomes null (e.g. after 一键还原) remove the marker.
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -1500,7 +1500,7 @@ const MapView: React.FC<MapViewProps> = ({
     }
   }, [randomWalkRadius, currentPosition, randomWalkCenter, randomWalkCenterMode, dualMode]);
 
-  // 種花模式: place a numbered badge (1..N) at every circle-segment vertex
+  // 种花模式: place a numbered badge (1..N) at every circle-segment vertex
   // so the user can see exactly how many segments each flower's circle has
   // and the order they're walked. divIcon markers sit above the route line
   // (zIndexOffset) so they stay visible once the simulation starts.
@@ -2386,7 +2386,7 @@ const MapView: React.FC<MapViewProps> = ({
               <div style={{ overflowY: 'auto', flex: 1 }}>
                 {recentPlaces.map((entry, idx) => {
                   // Text badge + colour per kind. Coord-input entries
-                  // share a single "座標" label regardless of the
+                  // share a single "坐标" label regardless of the
                   // teleport / navigate sub-action, since the entry
                   // point is what the user remembers.
                   type BadgeSpec = { label: string; color: string; bg: string };

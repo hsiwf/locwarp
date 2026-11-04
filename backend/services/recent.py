@@ -20,11 +20,11 @@ MAX_ENTRIES = 20
 DEDUPE_DIST_M = 10.0  # same spot if within 10m of the most-recent entry
 
 Kind = Literal[
-    "teleport",        # map right-click "瞬移到這裡"
-    "navigate",        # map right-click "導航到這裡"
+    "teleport",        # map right-click "瞬移到这里"
+    "navigate",        # map right-click "导航到这里"
     "search",          # address search (resolved to a teleport)
     "coord_teleport",  # coord-input "瞬移" button
-    "coord_navigate",  # coord-input "導航" button
+    "coord_navigate",  # coord-input "导航" button
 ]
 _VALID_KINDS = {"teleport", "navigate", "search", "coord_teleport", "coord_navigate"}
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * Animated weather icons — the "動態微動畫 (Set 04)" design.
+ * Animated weather icons — the "动态微动画 (Set 04)" design.
  *
  * Matches Open-Meteo's WMO weather_code. Each variant is a small inline SVG
  * with a subtle animation (sun rays pulse, rain drops fall, snow rotates,

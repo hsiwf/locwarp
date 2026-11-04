@@ -1,9 +1,9 @@
 # LocWarp
 
-**在 Windows 上控制 iPhone / iPad GPS 定位的虛擬定位工具。** 免越獄,透過 USB 或 WiFi 連線,支援瞬移、導航、多點路徑、花農繞圈、隨機漫步與搖桿操作,最多可同時控制三台裝置。
+**在 Windows 上控制 iPhone / iPad GPS 定位的虚拟定位工具。** 免越狱,通过 USB 或 WiFi 连接,支持瞬移、导航、多点路径、花农绕圈、随机漫步与摇杆操作,最多可同时控制三台设备。
 
 <p align="right">
-  <a href="README.md"><img alt="繁體中文" src="https://img.shields.io/badge/繁體中文-active-2d3748?style=flat-square"></a>
+  <a href="README.md"><img alt="简体中文" src="https://img.shields.io/badge/简体中文-active-2d3748?style=flat-square"></a>
   <a href="README.en.md"><img alt="English" src="https://img.shields.io/badge/English-gray?style=flat-square"></a>
 </p>
 
@@ -13,13 +13,13 @@
 
 <p align="center">
   <a href="https://github.com/keezxc1223/locwarp/releases">
-    <img alt="下載安裝檔" src="https://img.shields.io/badge/下載安裝檔-4285f4?style=for-the-badge&logo=github&logoColor=white">
+    <img alt="下载安装包" src="https://img.shields.io/badge/下载安装包-4285f4?style=for-the-badge&logo=github&logoColor=white">
   </a>
-  <a href="#安裝與前置設定">
-    <img alt="安裝說明" src="https://img.shields.io/badge/安裝說明-2d3748?style=for-the-badge&logo=readthedocs&logoColor=white">
+  <a href="#安装与前置设置">
+    <img alt="安装说明" src="https://img.shields.io/badge/安装说明-2d3748?style=for-the-badge&logo=readthedocs&logoColor=white">
   </a>
   <a href="https://lin.ee/UwdCrmf" target="_blank">
-    <img alt="LINE" src="https://img.shields.io/badge/LINE-聯絡作者-06C755?style=for-the-badge&logo=line&logoColor=white">
+    <img alt="LINE" src="https://img.shields.io/badge/LINE-联系作者-06C755?style=for-the-badge&logo=line&logoColor=white">
   </a>
 </p>
 
@@ -27,241 +27,241 @@
   <img src="docs/demo-v2.gif" width="720" alt="LocWarp demo">
 </p>
 
-## 目錄
+## 目录
 
-- [快速開始](#快速開始)
-- [系統需求與相容性](#系統需求與相容性)
+- [快速开始](#快速开始)
+- [系统需求与兼容性](#系统需求与兼容性)
 - [功能](#功能)
-- [安裝與前置設定](#安裝與前置設定)
-- [疑難排解](#疑難排解)
-- [開發者文件](#開發者文件)
-- [支持與聯絡](#支持與聯絡)
-- [專案性質聲明](#專案性質聲明)
+- [安装与前置设置](#安装与前置设置)
+- [疑难解答](#疑难解答)
+- [开发者文件](#开发者文件)
+- [支持与联系](#支持与联系)
+- [项目性质声明](#项目性质声明)
 - [License](#license)
-- [Disclaimer(免責聲明)](#disclaimer免責聲明)
+- [Disclaimer(免责声明)](#disclaimer免责声明)
 
 ---
 
-## 快速開始
+## 快速开始
 
-1. 到 [Releases](https://github.com/keezxc1223/locwarp/releases) 下載最新的 `LocWarp Setup x.y.z.exe` 並安裝。
-2. 電腦安裝 iTunes 或 Apple Devices(提供 Apple USB driver)。
-3. 用 USB 線接上 iPhone,在 iPhone 上點「信任這部電腦」。
-4. iPhone 開啟「設定 → 隱私權與安全性 → 開發者模式」。找不到這個選項時,LocWarp 連線後到「設定」頁按「開啟開發者模式」就會出現。
-5. 開啟 LocWarp(會要求系統管理員權限),在地圖上按右鍵即可瞬移。
+1. 到 [Releases](https://github.com/keezxc1223/locwarp/releases) 下载最新的 `LocWarp Setup x.y.z.exe` 并安装。
+2. 电脑安装 iTunes 或 Apple Devices(提供 Apple USB driver)。
+3. 用 USB 线接上 iPhone,在 iPhone 上点「信任这部电脑」。
+4. iPhone 打开「设置 → 隐私权与安全性 → 开发者模式」。找不到这个选项时,LocWarp 连接后到「设置」页按「打开开发者模式」就会出现。
+5. 打开 LocWarp(会要求系统管理员权限),在地图上按右键即可瞬移。
 
-每個步驟的細節見[安裝與前置設定](#安裝與前置設定)。防毒軟體若把後端程式誤判隔離,請先把安裝資料夾加入排除清單再重新安裝。
+每个步骤的细节见[安装与前置设置](#安装与前置设置)。防毒软件若把后端程序误判隔离,请先把安装文件夹加入排除列表再重新安装。
 
 ---
 
-## 系統需求與相容性
+## 系统需求与兼容性
 
-| 項目 | 需求 |
+| 项目 | 需求 |
 | --- | --- |
-| 電腦 | Windows 10 / 11(64 位元) |
-| 裝置 | iPhone / iPad,**iOS / iPadOS 17 以上**為主要支援版本 |
-| iOS 16.x | 由社群維護(@bitifyChen,[#9](https://github.com/keezxc1223/locwarp/pull/9)),走 LegacyLocationService 路徑 |
-| iOS 15 以下 | 不支援 |
-| 連線 | USB 線,或同一個 WiFi 網段(WiFi Tunnel 僅 iOS 17+) |
+| 电脑 | Windows 10 / 11(64 位元) |
+| 设备 | iPhone / iPad,**iOS / iPadOS 17 以上**为主要支持版本 |
+| iOS 16.x | 由社群维护(@bitifyChen,[#9](https://github.com/keezxc1223/locwarp/pull/9)),走 LegacyLocationService 路径 |
+| iOS 15 以下 | 不支持 |
+| 连接 | USB 线,或同一个 WiFi 网段(WiFi Tunnel 仅 iOS 17+) |
 
-### 已回報可用的版本
+### 已回报可用的版本
 
-| 主版本 | 已驗證版本 |
+| 主版本 | 已验证版本 |
 | --- | --- |
-| **iOS 27.x** | 27.0(開發者實測,iPhone 18 Pro Max) |
+| **iOS 27.x** | 27.0(开发者实测,iPhone 18 Pro Max) |
 | **iOS 26.x** | 26.5 · 26.4.2 · 26.4.1 · 26.4.1 iPadOS · 26.4 · 26.3.1 · 26.2 · 26.2.1 iPadOS (M1 iPad) |
 | **iOS 18.x** | 18.7.8 · 18.7.7 · 18.7.1 · 18.6.2 · 18.5 iPadOS · 18.3.1 · 18.1.1 |
 | **iOS 17.x** | 17.6.1 |
-| **iOS 16.x**(社群維護) | 16.7.15 · 16.7.12 |
+| **iOS 16.x**(社群维护) | 16.7.15 · 16.7.12 |
 
-「回報可用」代表**至少一位使用者在其環境下成功運作**,不等同於通用相容性保證。虛擬定位的穩定性取決於 iOS 修補版本、pymobiledevice3 對該版本的支援、Developer Disk Image 是否已掛載,以及 Windows 端的驅動、VPN、防火牆與防毒設定。沒列在表上的 iOS 16+ 版本只是還沒有人回報,歡迎到 [Issues](https://github.com/keezxc1223/locwarp/issues) 補充。
+「回报可用」代表**至少一位用户在其环境下成功运作**,不等同于通用兼容性保证。虚拟定位的稳定性取决于 iOS 修补版本、pymobiledevice3 对该版本的支持、Developer Disk Image 是否已挂载,以及 Windows 端的驱动、VPN、防火墙与防毒设置。没列在表上的 iOS 16+ 版本只是还没有人回报,欢迎到 [Issues](https://github.com/keezxc1223/locwarp/issues) 补充。
 
 ---
 
 ## 功能
 
-### 移動模式
+### 移动模式
 
-| 模式 | 說明 |
+| 模式 | 说明 |
 | --- | --- |
-| **瞬移** | 直接跳到指定座標 |
-| **導航** | 從目前位置沿實際道路以走路、腳踏車或開車的速度前往目的地 |
-| **多點路徑** | 依序經過多個路徑點,每站可停留(預設隨機 5 到 20 秒)。圈數設 0 為跑一趟,設 N 為繞 N 圈,留空為無限循環 |
-| **花農專用** | 在每個路徑點周圍繞圈。繞圈距離、每圈段數(3 到 20)、每點圈數(0.5 為半圈)、總輪數、每點前後等待都可以自訂並保存,點與點之間可走過去或瞬移。面板會即時顯示整趟預估時間,斷線會自動重連續跑 |
-| **隨機漫步** | 在指定半徑內隨機漫遊,每段停頓時間可調 |
-| **搖桿** | 以方向和力度即時操控,支援 WASD 與方向鍵 |
+| **瞬移** | 直接跳到指定坐标 |
+| **导航** | 从当前位置沿实际道路以走路、自行车或开车的速度前往目的地 |
+| **多点路径** | 依序经过多个路径点,每站可停留(默认随机 5 到 20 秒)。圈数设 0 为跑一趟,设 N 为绕 N 圈,留空为无限循环 |
+| **花农专用** | 在每个路径点周围绕圈。绕圈距离、每圈段数(3 到 20)、每点圈数(0.5 为半圈)、总轮数、每点前后等待都可以自订并保存,点与点之间可走过去或瞬移。面板会即时显示整趟预估时间,断线会自动重连续跑 |
+| **随机漫步** | 在指定半径内随机漫游,每段停顿时间可调 |
+| **摇杆** | 以方向和力度即时操控,支持 WASD 与方向键 |
 
-多點路徑可以勾選「**點對點跳躍**」,改成逐點瞬移而不走道路,適合只需要 GPS 依序停在每個點上的情況。跳躍前延遲(預設 2 秒)與跳躍後延遲(預設 4 秒)都可以調整,暫停時兩段延遲都會凍結。
+多点路径可以勾选「**点对点跳跃**」,改成逐点瞬移而不走道路,适合只需要 GPS 依序停在每个点上的情况。跳跃前延迟(默认 2 秒)与跳跃后延迟(默认 4 秒)都可以调整,暂停时两段延迟都会冻结。
 
 ### 速度控制
 
-- 三檔預設:走路 10.8、腳踏車 19.8、開車 60 km/h。
-- 可輸入任意固定速度,或輸入最小到最大的隨機範圍(例如 40 到 80 km/h),每段路重新抽一次,模擬真實路況。
-- 移動進行中可以修改速度後按「套用新速度」,會從目前位置以新速度接續,不用停下重來。
-- 選過的速度會記住,下次開啟沿用。到點暫停時地圖上方會顯示倒數。
+- 三档默认:走路 10.8、自行车 19.8、开车 60 km/h。
+- 可输入任意固定速度,或输入最小到最大的随机范围(例如 40 到 80 km/h),每段路重新抽一次,模拟真实路况。
+- 移动进行中可以修改速度后按「套用新速度」,会从当前位置以新速度接续,不用停下重来。
+- 选过的速度会记住,下次打开沿用。到点暂停时地图上方会显示倒数。
 
-### 路徑來源
+### 路径来源
 
-導航與多點路徑使用的道路路線,可以在四個免費、免註冊的路徑引擎之間切換:
+导航与多点路径使用的道路路线,可以在四个免费、免注册的路径引擎之间切换:
 
-| 引擎 | 說明 |
+| 引擎 | 说明 |
 | --- | --- |
-| **OSRM 公用 demo**(預設) | 全球涵蓋,偶爾整個服務會中斷 |
-| **OSRM FOSSGIS** | 同樣是 OSRM 引擎,由 FOSSGIS 代管的鏡像 |
-| **Valhalla** | 完全不同的引擎,兩個 OSRM 節點都中斷時最有用 |
-| **BRouter** | 獨立營運的第四個引擎,單車、健行、開車 profile 齊全 |
+| **OSRM 公用 demo**(默认) | 全球涵盖,偶尔整个服务会中断 |
+| **OSRM FOSSGIS** | 同样是 OSRM 引擎,由 FOSSGIS 代管的镜像 |
+| **Valhalla** | 完全不同的引擎,两个 OSRM 节点都中断时最有用 |
+| **BRouter** | 独立营运的第四个引擎,单车、健行、开车 profile 齐全 |
 
-任何引擎失敗時,該段路自動改走直線,下一段再重試,不會卡住。也可以直接勾選「使用直線路徑」完全不查詢引擎。多點路徑另有「最佳順序」功能,一鍵算出最短的走訪順序。
+任何引擎失败时,该段路自动改走直线,下一段再重试,不会卡住。也可以直接勾选「使用直线路径」完全不查询引擎。多点路径另有「最佳顺序」功能,一键算出最短的走访顺序。
 
-### 連線方式
+### 连接方式
 
-- **USB**:插上自動連線,iPhone 鎖定螢幕不受影響。拔除約 4 秒內偵測到,重新插上自動恢復,不用重新整理。
-- **WiFi Tunnel**(iOS 17+,需先用 USB 配對過一次):
-  - 「自動偵測」會先用 mDNS 尋找裝置,找不到再掃描區域網路。
-  - 連過的 IP 會記住,也可以「釘選」裝置,之後每次啟動自動連上,斷線自動重試。
-  - 「螢幕暗掉維持連線」(實驗功能)會持續補送位置,降低 iPhone 鎖定螢幕後斷線的機率。
-  - 「重新配對」可在配對記錄損毀時,透過 USB 一鍵重建。
-  - 停止 Tunnel 時若 USB 還插著,會自動切回 USB。
+- **USB**:插上自动连接,iPhone 锁定屏幕不受影响。拔除约 4 秒内检测到,重新插上自动恢复,不用刷新。
+- **WiFi Tunnel**(iOS 17+,需先用 USB 配对过一次):
+  - 「自动检测」会先用 mDNS 寻找设备,找不到再扫描局域网。
+  - 连过的 IP 会记住,也可以「钉选」设备,之后每次启动自动连上,断线自动重试。
+  - 「屏幕暗掉维持连接」(实验功能)会持续补送位置,降低 iPhone 锁定屏幕后断线的机率。
+  - 「重新配对」可在配对记录损毁时,通过 USB 一键重建。
+  - 停止 Tunnel 时若 USB 还插著,会自动切回 USB。
 
-### 多裝置群組模式
+### 多设备群组模式
 
-可同時連接**最多三台**裝置。瞬移、導航、各種移動模式、暫停、繼續、停止、套用速度、還原,都會同步送到所有裝置,桌面與手機網頁操控都適用。
+可同时连接**最多三台**设备。瞬移、导航、各种移动模式、暂停、继续、停止、套用速度、还原,都会同步送到所有设备,桌面与手机网页操控都适用。
 
-- 啟動任何動作前,會先把所有裝置瞬移到同一個座標,確保路徑一致。
-- 隨機漫步使用相同的亂數種子,所有裝置走的路線完全相同。
-- 後來才接上的裝置,會自動同步到目前位置並接續正在執行的任務。
-- 每台裝置可以個別還原、中斷或開啟開發者模式選項。
+- 启动任何动作前,会先把所有设备瞬移到同一个坐标,确保路径一致。
+- 随机漫步使用相同的乱数种子,所有设备走的路线完全相同。
+- 后来才接上的设备,会自动同步到当前位置并接续正在执行的任务。
+- 每台设备可以个别还原、中断或打开开发者模式选项。
 
-### 地圖
+### 地图
 
-- **圖層切換**(右上角):OSM、Google 圖磚(測試)、ESRI 街道、ESRI 衛星、OpenFreeMap Liberty / Bright / Positron(向量圖)、VersaTiles Colorful、NLSC 台灣電子地圖、GSI 日本地理院地圖。全部免 API key。
-- 路徑點以 S / 1 / 2 / 3 標示,路徑線有流動箭頭可以看出方向。
-- 左上角按鈕可一鍵置中目前的模擬位置。選「只顯示路徑」時地圖會自動縮放到整條路線。
-- 地圖上的使用者圖示可以換成內建的 6 組角色,或上傳自己的 PNG(自動去除透明邊界)。
-- 座標格式可在 DD、DMS、DM 之間切換。
+- **图层切换**(右上角):OSM、Google 瓦片(测试)、ESRI 街道、ESRI 卫星、OpenFreeMap Liberty / Bright / Positron(向量图)、VersaTiles Colorful、NLSC 台湾电子地图、GSI 日本地理院地图。全部免 API key。
+- 路径点以 S / 1 / 2 / 3 标示,路径线有流动箭头可以看出方向。
+- 左上角按钮可一键置中当前的模拟位置。选「只显示路径」时地图会自动缩放到整条路线。
+- 地图上的用户图示可以换成内建的 6 组角色,或上传自己的 PNG(自动去除透明边界)。
+- 坐标格式可在 DD、DMS、DM 之间切换。
 
-### 座標收藏
+### 坐标收藏
 
-- 新增座標時自動帶入地名與國旗,編輯後座標改變會自動更新國旗。
-- 分類可自訂顏色,支援搜尋、排序(名稱 / 日期 / 最後使用)、拖曳排序、多選刪除。
-- 匯入與匯出:JSON(全部資料,匯入為合併不覆蓋)、GPX(單筆、整個分類,或多個分類一次匯出成 ZIP)。
-- 可把所有收藏顯示在地圖上,數萬筆也不會卡頓,密集的點會自動聚合。
-- 「點擊也要飛 GPS」可以決定點座標時是真的瞬移過去,還是只把地圖畫面移過去看看。
+- 新增坐标时自动带入地名与国旗,编辑后坐标改变会自动更新国旗。
+- 分类可自订颜色,支持搜索、排序(名称 / 日期 / 最后使用)、拖动排序、多选删除。
+- 导入与导出:JSON(全部资料,导入为合并不覆盖)、GPX(单笔、整个分类,或多个分类一次导出成 ZIP)。
+- 可把所有收藏显示在地图上,数万笔也不会卡顿,密集的点会自动聚合。
+- 「点击也要飞 GPS」可以决定点坐标时是真的瞬移过去,还是只把地图画面移过去看看。
 
-### 儲存路線
+### 保存路线
 
-- 路線可以分類、拖曳排序,並從清單直接載入開始跑。
-- 支援 GPX 與 JSON 的匯入匯出。
-- 可以把路徑點依目前順序複製成一行一筆的 `lat, lng` 文字。
+- 路线可以分类、拖动排序,并从列表直接加载开始跑。
+- 支持 GPX 与 JSON 的导入导出。
+- 可以把路径点依当前顺序复制成一行一笔的 `lat, lng` 文字。
 
-### 地址搜尋
+### 地址搜索
 
-- **免費版**:預設來源,使用 OpenStreetMap 開放資料,不用 API key。設定裡另有 Photon 選項,模糊搜尋與錯字容錯較強。
-- **Google Geocoding**:輸入自己的 API key(只存在本機),中文地名與店家結果最精準,每月有免費額度。
-- 座標輸入框可以直接貼上座標文字,會自動辨識出有效的經緯度。
-- 手機網頁操控會沿用電腦端的設定。
+- **免费版**:默认来源,使用 OpenStreetMap 开放资料,不用 API key。设置里另有 Photon 选项,模糊搜索与错字容错较强。
+- **Google Geocoding**:输入自己的 API key(只存在本机),中文地名与店家结果最精准,每月有免费额度。
+- 坐标输入框可以直接贴上坐标文字,会自动辨识出有效的经纬度。
+- 手机网页操控会沿用电脑端的设置。
 
-### 手機網頁操控
+### 手机网页操控
 
-人不在電腦旁時,可以用手機瀏覽器操控。按狀態列的「手機操控」會顯示區域網路網址與 6 位數 PIN,手機輸入後就能使用行動版地圖:瞬移、導航到指定點(走路 / 腳踏車 / 開車或自訂速度)、搜尋地址、輸入座標、停止與還原,並即時顯示桌面上同一條路徑。
+人不在电脑旁时,可以用手机浏览器操控。按状态列的「手机操控」会显示局域网网址与 6 位数 PIN,手机输入后就能使用行动版地图:瞬移、导航到指定点(走路 / 自行车 / 开车或自订速度)、搜索地址、输入坐标、停止与还原,并即时显示桌面上同一条路径。
 
-> 手機必須跟電腦連在**同一個 WiFi**,電腦防火牆需放行 8777 port。按「重新產生」可立刻更換 PIN,讓之前配對過的手機失效。
+> 手机必须跟电脑连在**同一个 WiFi**,电脑防火墙需放行 8777 port。按「重新产生」可立刻更换 PIN,让之前配对过的手机失效。
 
-### 狀態列資訊
+### 状态列信息
 
-- 目前模擬位置的**國旗、地名、當地天氣與溫度**。
-- 跨時區時顯示時差,點開可看完整時區資訊。
-- **一鍵還原**:清除虛擬定位。注意「停止」只會結束移動,虛擬定位仍然保留,要恢復真實 GPS 請按還原。
-- 版本號:有新版本時旁邊出現 `NEW` 標示,點擊前往下載頁。
-- 「Log 資料夾」按鈕:一鍵開啟 `~/.locwarp/logs/`,方便把 backend.log 附到 Issue。
+- 当前模拟位置的**国旗、地名、当地天气与温度**。
+- 跨时区时显示时差,点开可看完整时区信息。
+- **一键还原**:清除虚拟定位。注意「停止」只会结束移动,虚拟定位仍然保留,要恢复真实 GPS 请按还原。
+- 版本号:有新版本时旁边出现 `NEW` 标示,点击前往下载页。
+- 「Log 文件夹」按钮:一键打开 `~/.locwarp/logs/`,方便把 backend.log 附到 Issue。
 
 ### 其他
 
-- **Cooldown**:依瞬移距離自動計算冷卻時間,降低被偵測為異常移動的風險。
-- 介面語言可在繁體中文與 English 之間即時切換。
-- 路線完成提示音、硬體加速開關(部分顯示卡驅動下關閉可解決殘影或黑畫面,見 [Issue #24](https://github.com/keezxc1223/locwarp/issues/24))。
-- 所有資料(座標收藏、路線、設定)都存在 `~/.locwarp/`,重新安裝不會遺失。
+- **Cooldown**:依瞬移距离自动计算冷却时间,降低被检测为异常移动的风险。
+- 界面语言可在简体中文与 English 之间即时切换。
+- 路线完成提示音、硬件加速开关(部分显示卡驱动下关闭可解决残影或黑画面,见 [Issue #24](https://github.com/keezxc1223/locwarp/issues/24))。
+- 所有资料(坐标收藏、路线、设置)都存在 `~/.locwarp/`,重新安装不会遗失。
 
 ---
 
-## 安裝與前置設定
+## 安装与前置设置
 
-**[下載安裝檔](https://github.com/keezxc1223/locwarp/releases)**。安裝檔已包含所有需要的元件,不用另外安裝 Python 或 Node。安裝後從桌面或開始選單開啟 **LocWarp**,啟動時會要求系統管理員權限(WiFi Tunnel 建立虛擬網路介面需要)。
+**[下载安装包](https://github.com/keezxc1223/locwarp/releases)**。安装包已包含所有需要的组件,不用另外安装 Python 或 Node。安装后从桌面或开始菜单打开 **LocWarp**,启动时会要求系统管理员权限(WiFi Tunnel 建立虚拟网络接口需要)。
 
-### 1. 安裝 Apple USB driver
+### 1. 安装 Apple USB driver
 
-Windows 需要 Apple 的 USB driver 才能跟 iPhone 溝通。下列**擇一**安裝即可:
+Windows 需要 Apple 的 USB driver 才能跟 iPhone 沟通。下列**择一**安装即可:
 
 - [iTunes for Windows(桌面版,64-bit)](https://secure-appldnld.apple.com/itunes12/047-76416-20260302-fefe4356-211d-4da1-8bc4-058eb36ea803/iTunes64Setup.exe)
 - [Microsoft Store 的 iTunes](https://apps.microsoft.com/detail/9pb2mz1zmb1s)
 - [Microsoft Store 的 Apple Devices](https://apps.microsoft.com/detail/9np83lwlpz9k?hl=zh-TW&gl=TW)
 
-多數人裝桌面版 iTunes 就能用。如果 iTunes 抓不到 iPhone,社群回報改裝 Apple Devices 可以成功。
+多数人装桌面版 iTunes 就能用。如果 iTunes 抓不到 iPhone,社群回报改装 Apple Devices 可以成功。
 
-### 2. USB 連接並信任此電腦
+### 2. USB 连接并信任此电脑
 
-第一次使用前用 USB 線接上 iPhone,iPhone 會詢問「要信任這部電腦嗎?」,點**信任**並輸入密碼。
+第一次使用前用 USB 线接上 iPhone,iPhone 会询问「要信任这部电脑吗?」,点**信任**并输入密码。
 
-### 3. 開啟開發者模式
+### 3. 打开开发者模式
 
-iPhone 上:**設定 → 隱私權與安全性 → 開發者模式 → 開啟**,裝置會要求重新啟動,重啟後再確認一次。
+iPhone 上:**设置 → 隐私权与安全性 → 开发者模式 → 打开**,设备会要求重新启动,重启后再确认一次。
 
-iOS 16 以上預設不顯示這個選項。LocWarp 連上裝置後,到上方的「**設定**」頁按「**開啟開發者模式**」按鈕,按下後:
+iOS 16 以上默认不显示这个选项。LocWarp 连上设备后,到上方的「**设置**」页按「**打开开发者模式**」按钮,按下后:
 
-1. 在 iPhone 上完全關掉「設定」App。
-2. 重新打開「設定 → 隱私權與安全性」,往下拉就會看到「開發者模式」。
-3. 開啟它,依指示重新啟動。
+1. 在 iPhone 上完全关掉「设置」App。
+2. 重新打开「设置 → 隐私权与安全性」,往下拉就会看到「开发者模式」。
+3. 打开它,依指示重新启动。
 
-按鈕不能用的時候(例如只有 WiFi 連線),可以改用[側載 IPA 的備援方式](#附錄用側載方式讓開發者模式出現)。
+按钮不能用的时候(例如只有 WiFi 连接),可以改用[侧载 IPA 的备援方式](#附录用侧载方式让开发者模式出现)。
 
-### 4. 掛載 Developer Disk Image(iOS 17+)
+### 4. 挂载 Developer Disk Image(iOS 17+)
 
-iOS 17 以上需要 iPhone 上掛有 Personalized DDI 才能模擬定位。LocWarp 只會檢查,不會自動下載或掛載。如果提示「iPhone 上未偵測到 DDI」,請用下列任一工具幫 iPhone 掛一次:Xcode、愛思助手、3uTools、pymobiledevice3 CLI。
+iOS 17 以上需要 iPhone 上挂有 Personalized DDI 才能模拟定位。LocWarp 只会检查,不会自动下载或挂载。如果提示「iPhone 上未检测到 DDI」,请用下列任一工具帮 iPhone 挂一次:Xcode、爱思助手、3uTools、pymobiledevice3 CLI。
 
-### 5. WiFi Tunnel(選用)
+### 5. WiFi Tunnel(选用)
 
-想拔掉 USB 改用無線時:
+想拔掉 USB 改用无线时:
 
-- iPhone 與電腦必須在**同一個 WiFi 網段**。
-- 必須先完成步驟 2 的 USB 配對。
-- 在 LocWarp 的「連線」頁啟動 WiFi Tunnel,成功後即可拔除 USB。
+- iPhone 与电脑必须在**同一个 WiFi 网段**。
+- 必须先完成步骤 2 的 USB 配对。
+- 在 LocWarp 的「连接」页启动 WiFi Tunnel,成功后即可拔除 USB。
 
-| 連線方式 | iPhone 鎖定螢幕 | 建議 |
+| 连接方式 | iPhone 锁定屏幕 | 建议 |
 | --- | --- | --- |
-| **USB** | 不受影響 | 無 |
-| **WiFi Tunnel** | 會讓網路介面休眠,連線中斷 | 關閉自動鎖定,或開啟「螢幕暗掉維持連線」 |
+| **USB** | 不受影响 | 无 |
+| **WiFi Tunnel** | 会让网络接口休眠,连接中断 | 关闭自动锁定,或打开「屏幕暗掉维持连接」 |
 
-使用 WiFi Tunnel 時建議把「設定 → 顯示與亮度 → 自動鎖定」設為**永不**,並接上充電線。
+使用 WiFi Tunnel 时建议把「设置 → 显示与亮度 → 自动锁定」设为**永不**,并接上充电线。
 
 ---
 
-## 疑難排解
+## 疑难解答
 
-| 症狀 | 可能原因與解法 |
+| 症状 | 可能原因与解法 |
 | --- | --- |
-| 開啟後顯示後端程式不存在 | 防毒軟體把未簽章的後端 exe 隔離了。把安裝資料夾加入排除清單後重新安裝 |
-| Tunnel 啟動後連不上 | 確認以系統管理員身分啟動;暫時關閉 VPN 或第三方防火牆再試 |
-| WiFi 自動偵測找不到裝置 | 確認在同一個 WiFi 網段、路由器沒有開啟裝置隔離(AP isolation);可改為手動輸入 IP |
-| `No such service: com.apple.instruments.dtservicehub`,或提示「未偵測到 DDI」 | 依[步驟 4](#4-掛載-developer-disk-imageios-17)掛載 DDI。仍失敗時,先把開發者模式關閉、重開機、再次開啟,然後重新掛載 |
-| iPhone 設定裡找不到開發者模式 | LocWarp 連上裝置後,到上方的「設定」頁按「開啟開發者模式」,再依[步驟 3](#3-開啟開發者模式)關掉並重開 iPhone 的「設定」App。按鈕無效時改用[側載方式](#附錄用側載方式讓開發者模式出現) |
-| 畫面殘影或黑畫面 | 在「設定」頁關閉硬體加速 |
-| 打開程式直接閃退 | 新版會自動改為軟體渲染並重啟;仍閃退的話,對捷徑按右鍵 › 內容 › 目標,結尾補上 `--no-sandbox --disable-gpu --in-process-gpu` |
-| 國旗或地名沒有出現 | 這兩項來自免費的公共服務,偶爾會暫時無回應,稍後再瞬移一次即可 |
+| 打开后显示后端程序不存在 | 防毒软件把未签名的后端 exe 隔离了。把安装文件夹加入排除列表后重新安装 |
+| Tunnel 启动后连不上 | 确认以系统管理员身份启动;暂时关闭 VPN 或第三方防火墙再试 |
+| WiFi 自动检测找不到设备 | 确认在同一个 WiFi 网段、路由器没有打开设备隔离(AP isolation);可改为手动输入 IP |
+| `No such service: com.apple.instruments.dtservicehub`,或提示「未检测到 DDI」 | 依[步骤 4](#4-挂载-developer-disk-imageios-17)挂载 DDI。仍失败时,先把开发者模式关闭、重开机、再次打开,然后重新挂载 |
+| iPhone 设置里找不到开发者模式 | LocWarp 连上设备后,到上方的「设置」页按「打开开发者模式」,再依[步骤 3](#3-打开开发者模式)关掉并重开 iPhone 的「设置」App。按钮无效时改用[侧载方式](#附录用侧载方式让开发者模式出现) |
+| 画面残影或黑画面 | 在「设置」页关闭硬件加速 |
+| 打开程序直接闪退 | 新版会自动改为软件渲染并重启;仍闪退的话,对捷径按右键 › 内容 › 目标,结尾补上 `--no-sandbox --disable-gpu --in-process-gpu` |
+| 国旗或地名没有出现 | 这两项来自免费的公共服务,偶尔会暂时无回应,稍后再瞬移一次即可 |
 
-回報問題時請附上 iOS 版本、連線方式,以及 `~/.locwarp/logs/backend.log`。
+回报问题时请附上 iOS 版本、连接方式,以及 `~/.locwarp/logs/backend.log`。
 
-### 附錄:用側載方式讓開發者模式出現
+### 附录:用侧载方式让开发者模式出现
 
-1. 安裝 [Sideloadly](https://sideloadly.io/)。
-2. 從 [Decrypt IPA Store](https://decrypt.day/) 或 [ARM Converter Decrypted App Store](https://armconverter.com/decryptedappstore/us) 取得任意一個 IPA,建議挑體積小的。
-3. 把 IPA 拖進 Sideloadly,USB 接上 iPhone,輸入個人 Apple ID 後按 **Start**。
-4. 完成後,iPhone 的「設定 → 隱私權與安全性」最下方會出現「開發者模式」,開啟並重新啟動。
+1. 安装 [Sideloadly](https://sideloadly.io/)。
+2. 从 [Decrypt IPA Store](https://decrypt.day/) 或 [ARM Converter Decrypted App Store](https://armconverter.com/decryptedappstore/us) 取得任意一个 IPA,建议挑体积小的。
+3. 把 IPA 拖进 Sideloadly,USB 接上 iPhone,输入个人 Apple ID 后按 **Start**。
+4. 完成后,iPhone 的「设置 → 隐私权与安全性」最下方会出现「开发者模式」,打开并重新启动。
 
 ---
 
-## 開發者文件
+## 开发者文件
 
-### 架構
+### 架构
 
 ```
 ┌─────────────────┐      IPC / HTTP + WS       ┌──────────────────┐
@@ -275,148 +275,148 @@ iOS 17 以上需要 iPhone 上掛有 Personalized DDI 才能模擬定位。LocWa
                                               └──────────────────┘
 ```
 
-### 技術組成
+### 技术组成
 
-| 層 | 技術 | 用途 |
+| 层 | 技术 | 用途 |
 | --- | --- | --- |
-| Frontend | [Electron](https://www.electronjs.org/) 44 | 桌面外殼,負責視窗、啟動 backend、改寫圖磚請求的 User-Agent |
-| Frontend | [React](https://react.dev/) 19 + [TypeScript](https://www.typescriptlang.org/) 7 + [Vite](https://vitejs.dev/) 8 | UI 與打包(`base: './'` 供 `file://` 載入) |
-| Frontend | [Leaflet](https://leafletjs.com/) 1.9 | 互動地圖、自訂標記、動畫路徑線 |
-| Frontend | [MapLibre GL](https://maplibre.org/) 6 | 向量圖層渲染,經 maplibre-gl-leaflet 掛進 Leaflet |
-| Backend | Python 3.13 + [FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/) | REST API 與 WebSocket(`:8777`) |
-| Backend | [pymobiledevice3](https://github.com/doronz88/pymobiledevice3) 11.49+ | iOS 裝置協議(DVT / RemoteServices / lockdown / LegacyLocationService)與 WiFi tunnel |
-| Backend | [httpx](https://www.python-httpx.org/)、[pydantic](https://docs.pydantic.dev/)、[gpxpy](https://github.com/tkrajina/gpxpy) | 外部服務呼叫、資料驗證、GPX 解析 |
-| 打包 | [PyInstaller](https://pyinstaller.org/)、[electron-builder](https://www.electron.build/)(NSIS) | backend exe 與 Windows 安裝檔 |
+| Frontend | [Electron](https://www.electronjs.org/) 44 | 桌面外壳,负责窗口、启动 backend、改写瓦片请求的 User-Agent |
+| Frontend | [React](https://react.dev/) 19 + [TypeScript](https://www.typescriptlang.org/) 7 + [Vite](https://vitejs.dev/) 8 | UI 与打包(`base: './'` 供 `file://` 加载) |
+| Frontend | [Leaflet](https://leafletjs.com/) 1.9 | 互动地图、自订标记、动画路径线 |
+| Frontend | [MapLibre GL](https://maplibre.org/) 6 | 向量图层渲染,经 maplibre-gl-leaflet 挂进 Leaflet |
+| Backend | Python 3.13 + [FastAPI](https://fastapi.tiangolo.com/) + [uvicorn](https://www.uvicorn.org/) | REST API 与 WebSocket(`:8777`) |
+| Backend | [pymobiledevice3](https://github.com/doronz88/pymobiledevice3) 11.49+ | iOS 设备协议(DVT / RemoteServices / lockdown / LegacyLocationService)与 WiFi tunnel |
+| Backend | [httpx](https://www.python-httpx.org/)、[pydantic](https://docs.pydantic.dev/)、[gpxpy](https://github.com/tkrajina/gpxpy) | 外部服务呼叫、资料验证、GPX 解析 |
+| 打包 | [PyInstaller](https://pyinstaller.org/)、[electron-builder](https://www.electron.build/)(NSIS) | backend exe 与 Windows 安装包 |
 
-介面圖示全部是 inline SVG,樣式是手寫的單一 `styles.css`,沒有使用第三方 icon 或 UI 套件。
+界面图示全部是 inline SVG,样式是手写的单一 `styles.css`,没有使用第三方 icon 或 UI 组件库。
 
-### 外部服務
+### 外部服务
 
-全部免費。除了 Google Geocoding 需要使用者自備 key,其餘都不需要註冊。
+全部免费。除了 Google Geocoding 需要用户自备 key,其余都不需要注册。
 
-| 服務 | 呼叫端 | 用途 |
+| 服务 | 呼叫端 | 用途 |
 | --- | --- | --- |
-| [OSRM demo](https://project-osrm.org/)、[OSRM FOSSGIS](https://routing.openstreetmap.de/)、[Valhalla](https://valhalla1.openstreetmap.de/)、[BRouter](https://brouter.de/) | backend | 路線規劃與多點順序最佳化 |
-| [Photon (komoot)](https://photon.komoot.io/) | backend | 地址搜尋與反向地理編碼(國旗、地名) |
-| [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding) | backend | 地址搜尋(選用,使用者自備 key) |
-| [Open-Meteo](https://open-meteo.com/) | frontend | 模擬位置的天氣 |
-| [TimezoneDB](https://timezonedb.com/) | backend | 座標轉時區(內建 key) |
-| [flagcdn.com](https://flagcdn.com/) | frontend | 國旗圖片 |
-| OpenStreetMap、Google、[ESRI](https://www.esri.com/)、[OpenFreeMap](https://openfreemap.org/)、[VersaTiles](https://versatiles.org/)、[NLSC](https://maps.nlsc.gov.tw/)、[GSI](https://www.gsi.go.jp/) | frontend | 地圖圖磚 |
-| [GitHub Releases](https://github.com/keezxc1223/locwarp/releases) | frontend | 啟動時檢查新版本(無遙測) |
+| [OSRM demo](https://project-osrm.org/)、[OSRM FOSSGIS](https://routing.openstreetmap.de/)、[Valhalla](https://valhalla1.openstreetmap.de/)、[BRouter](https://brouter.de/) | backend | 路线规划与多点顺序最佳化 |
+| [Photon (komoot)](https://photon.komoot.io/) | backend | 地址搜索与反向地理编码(国旗、地名) |
+| [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding) | backend | 地址搜索(选用,用户自备 key) |
+| [Open-Meteo](https://open-meteo.com/) | frontend | 模拟位置的天气 |
+| [TimezoneDB](https://timezonedb.com/) | backend | 坐标转时区(内建 key) |
+| [flagcdn.com](https://flagcdn.com/) | frontend | 国旗图片 |
+| OpenStreetMap、Google、[ESRI](https://www.esri.com/)、[OpenFreeMap](https://openfreemap.org/)、[VersaTiles](https://versatiles.org/)、[NLSC](https://maps.nlsc.gov.tw/)、[GSI](https://www.gsi.go.jp/) | frontend | 地图瓦片 |
+| [GitHub Releases](https://github.com/keezxc1223/locwarp/releases) | frontend | 启动时检查新版本(无遥测) |
 
-反向地理編碼不使用 Nominatim 公共伺服器,因為它的使用政策以應用程式為單位計算流量上限,不適合散佈型的桌面程式。地址搜尋的預設選項若被 Nominatim 拒絕,會自動改用 Photon。
+反向地理编码不使用 Nominatim 公共服务器,因为它的使用政策以应用程序为单位计算流量上限,不适合散布型的桌面程序。地址搜索的默认选项若被 Nominatim 拒绝,会自动改用 Photon。
 
-### 核心模組(`backend/core/`)
+### 核心模块(`backend/core/`)
 
-| 模組 | 職責 |
+| 模块 | 职责 |
 | --- | --- |
-| `simulation_engine.py` | 中央控制器:狀態轉換、任務生命週期、`_move_along_route()` 移動迴圈、ETA 計算 |
-| `device_manager.py` | 裝置探索、USB 與 WiFi Tunnel 連線管理 |
-| `navigator.py` | 單一目的地導航 |
-| `route_loop.py` / `multi_stop.py` | 多點路徑的循環與停留 |
-| `flower.py` | 花農專用的繞圈邏輯 |
-| `random_walk.py` / `joystick.py` | 隨機漫步、搖桿 |
-| `teleport.py` / `restore.py` | 瞬移、還原 |
+| `simulation_engine.py` | 中央控制器:状态转换、任务生命周期、`_move_along_route()` 移动回圈、ETA 计算 |
+| `device_manager.py` | 设备探索、USB 与 WiFi Tunnel 连接管理 |
+| `navigator.py` | 单一目的地导航 |
+| `route_loop.py` / `multi_stop.py` | 多点路径的循环与停留 |
+| `flower.py` | 花农专用的绕圈逻辑 |
+| `random_walk.py` / `joystick.py` | 随机漫步、摇杆 |
+| `teleport.py` / `restore.py` | 瞬移、还原 |
 
-### 設計重點
+### 设计重点
 
-- **位置推播**:backend 每個 tick 透過 WebSocket 送出 `position_update`,前端即時更新地圖與 ETA。
-- **速度解析**:`config.resolve_speed_profile()` 統一處理模式預設、固定速度、隨機範圍,優先序為範圍 > 固定 > 預設。
-- **In-process WiFi tunnel**:backend 直接在主 event loop 內執行 `start_tcp_tunnel()`,沒有獨立的 helper 程式。
-- **狀態目錄**:所有執行期資料寫入 `~/.locwarp/`,避開 PyInstaller 的臨時目錄。
-- **節制的地理查詢**:國旗、地名、時區、天氣只在靜止或瞬移後、且位置變動超過 100 公尺時查詢,移動中不查,避免干擾與裝置的通訊。四項查詢並行,其中一項慢不會拖住其他項。
-- **反向地理編碼快取**:結果以約 100 公尺的格子為單位存在磁碟(`reverse_geocode_cache.json`,保留 30 天),回到查過的地方不再連網,同時發出的相同查詢會合併成一次。新增座標與「這裡是哪裡」會略過快取以取得精確名稱。
-- **天氣由前端直連**:每個使用者用自己的 IP 計算 Open-Meteo 配額,不經 backend 轉送。
-- **圖層預先連線**:滑鼠移到圖層選單時,預先對所有圖層的主機建立連線並抓取向量圖層的 style,縮短第一次切換的等待。
-- **多裝置群組**:primary 裝置不會被後插的裝置取代,後插的裝置會同步到 primary 的位置並接續任務。
+- **位置推播**:backend 每个 tick 通过 WebSocket 送出 `position_update`,前端即时更新地图与 ETA。
+- **速度解析**:`config.resolve_speed_profile()` 统一处理模式默认、固定速度、随机范围,优先序为范围 > 固定 > 默认。
+- **In-process WiFi tunnel**:backend 直接在主 event loop 内执行 `start_tcp_tunnel()`,没有独立的 helper 程序。
+- **状态目录**:所有执行期资料写入 `~/.locwarp/`,避开 PyInstaller 的临时目录。
+- **节制的地理查询**:国旗、地名、时区、天气只在静止或瞬移后、且位置变动超过 100 米时查询,移动中不查,避免干扰与设备的通讯。四项查询并行,其中一项慢不会拖住其他项。
+- **反向地理编码缓存**:结果以约 100 米的格子为单位存在磁盘(`reverse_geocode_cache.json`,保留 30 天),回到查过的地方不再连网,同时发出的相同查询会合并成一次。新增坐标与「这里是哪里」会略过缓存以取得精确名称。
+- **天气由前端直连**:每个用户用自己的 IP 计算 Open-Meteo 配额,不经 backend 转送。
+- **图层预先连接**:滑鼠移到图层菜单时,预先对所有图层的主机建立连接并抓取向量图层的 style,缩短第一次切换的等待。
+- **多设备群组**:primary 设备不会被后插的设备取代,后插的设备会同步到 primary 的位置并接续任务。
 
-### 開發環境
+### 开发环境
 
-需求:Windows 10 / 11、Python **3.13**、Node.js 18+,以及一台已配對並開啟開發者模式的 iPhone。
+需求:Windows 10 / 11、Python **3.13**、Node.js 18+,以及一台已配对并打开开发者模式的 iPhone。
 
 ```bash
-# 後端依賴(含 WiFi tunnel)
+# 后端依赖(含 WiFi tunnel)
 py -3.13 -m pip install -r backend/requirements.txt
 
-# 前端依賴
+# 前端依赖
 cd frontend
 npm install
 ```
 
-雙擊 `LocWarp.bat` 會自動提權並啟動 backend(`:8777`)與 Vite dev server(`:5173`),並用預設瀏覽器開啟。也可以手動啟動:
+双击 `LocWarp.bat` 会自动提权并启动 backend(`:8777`)与 Vite dev server(`:5173`),并用默认浏览器打开。也可以手动启动:
 
 ```bash
-# 終端 1:backend
+# 终端 1:backend
 cd backend && py -3.13 main.py
 
-# 終端 2a:前端走瀏覽器
+# 终端 2a:前端走浏览器
 cd frontend && npx vite --host --port 5173
 
-# 終端 2b:前端走 Electron 視窗(跟安裝檔相同的執行方式)
+# 终端 2b:前端走 Electron 窗口(跟安装包相同的执行方式)
 cd frontend && npm run start
 ```
 
-> 開發模式走 `http://`,安裝檔走 `file://`,兩者行為不完全相同(例如 MapLibre 的 worker)。升級前端相依套件後,請務必用打包後的安裝檔驗證。
+> 开发模式走 `http://`,安装包走 `file://`,两者行为不完全相同(例如 MapLibre 的 worker)。升级前端依赖包后,请务必用打包后的安装包验证。
 
 ### 打包
 
 ```bash
-# 一次性安裝
+# 一次性安装
 py -3.13 -m pip install pyinstaller
 cd frontend && npm install -D electron-builder
 
-# 一鍵建置
+# 一键建置
 build-installer.bat
 ```
 
-`build-installer.bat` 依序執行:
+`build-installer.bat` 依序执行:
 
-1. **PyInstaller** 編譯 backend 到 `dist-py/locwarp-backend/`
+1. **PyInstaller** 编译 backend 到 `dist-py/locwarp-backend/`
 2. **Vite** 建置前端到 `frontend/dist/`
-3. **electron-builder** 產出 `frontend/release/LocWarp Setup X.Y.Z.exe`(約 175 MB)
+3. **electron-builder** 产出 `frontend/release/LocWarp Setup X.Y.Z.exe`(约 175 MB)
 
-注意 `npm run dist` 只執行第 3 步。改過 backend 要重跑 PyInstaller,改過前端或版本號要重跑 `npx vite build`,否則安裝檔會帶到舊的內容。
+注意 `npm run dist` 只执行第 3 步。改过 backend 要重跑 PyInstaller,改过前端或版本号要重跑 `npx vite build`,否则安装包会带到旧的内容。
 
-### 專案結構
+### 项目结构
 
 ```
 locwarp/
 ├── backend/                 # FastAPI + pymobiledevice3
 │   ├── api/                 # HTTP endpoints
-│   ├── core/                # Simulation engine + 各移動模式
-│   ├── services/            # 定位服務、地理編碼、座標收藏、路線
+│   ├── core/                # Simulation engine + 各移动模式
+│   ├── services/            # 定位服务、地理编码、坐标收藏、路线
 │   ├── models/schemas.py    # Pydantic models
-│   ├── static/phone.html    # 手機網頁操控頁面
-│   ├── config.py            # 速度 profile、cooldown 表、路徑設定
+│   ├── static/phone.html    # 手机网页操控页面
+│   ├── config.py            # 速度 profile、cooldown 表、路径设置
 │   ├── main.py              # Entrypoint
 │   └── locwarp-backend.spec # PyInstaller spec
 │
 ├── frontend/                # Electron + React
-│   ├── electron/main.js     # Electron 進入點,打包模式下啟動 backend
+│   ├── electron/main.js     # Electron 进入点,打包模式下启动 backend
 │   ├── src/
 │   │   ├── App.tsx
 │   │   ├── components/      # MapView, ControlPanel, BookmarkList, StatusBar...
 │   │   ├── hooks/           # useSimulation, useDevice, useBookmarks
-│   │   ├── i18n/            # 中英文字串
+│   │   ├── i18n/            # 中英文字符串
 │   │   └── services/api.ts
-│   ├── build/               # 圖示與安裝程式圖片
-│   └── package.json         # electron-builder 設定
+│   ├── build/               # 图示与安装程序图片
+│   └── package.json         # electron-builder 设置
 │
-├── LocWarp.bat / start.py   # 開發用啟動器(自動提權)
+├── LocWarp.bat / start.py   # 开发用启动器(自动提权)
 ├── stop.py
-└── build-installer.bat      # 一鍵建置安裝檔
+└── build-installer.bat      # 一键建置安装包
 ```
 
 ---
 
-## 支持與聯絡
+## 支持与联系
 
-有問題、建議,或想回報某個 iOS 版本可用,歡迎[加 LINE](https://lin.ee/UwdCrmf) 或到 [Issues](https://github.com/keezxc1223/locwarp/issues) 留言。
+有问题、建议,或想回报某个 iOS 版本可用,欢迎[加 LINE](https://lin.ee/UwdCrmf) 或到 [Issues](https://github.com/keezxc1223/locwarp/issues) 留言。
 
-### USDT 斗內(TRC-20 / TRON 鏈)
+### USDT 斗内(TRC-20 / TRON 链)
 
-LocWarp 免費且開源。想支持開發的話,可以使用下方地址。**僅支援 TRC-20(TRON 鏈)**,請勿使用其他鏈轉帳。
+LocWarp 免费且开源。想支持开发的话,可以使用下方地址。**仅支持 TRC-20(TRON 链)**,请勿使用其他链转帐。
 
 ```
 TB1i7pEcifAeh8oDLLZFqiRVrpUaZmmDAn
@@ -428,55 +428,55 @@ TB1i7pEcifAeh8oDLLZFqiRVrpUaZmmDAn
 
 ---
 
-## 專案性質聲明
+## 项目性质声明
 
-LocWarp 是個人獨立維護的開源專案,不是商業產品,也沒有專職團隊。開發者會盡力在合理時間內新增功能、回應 Issue、修復 Bug,並隨 iOS 與 pymobiledevice3 的版本演進持續更新,但是:
+LocWarp 是个人独立维护的开源项目,不是商业产品,也没有专职团队。开发者会尽力在合理时间内新增功能、回应 Issue、修复 Bug,并随 iOS 与 pymobiledevice3 的版本演进持续更新,但是:
 
-- 本專案只保證在**開發者本人的測試環境**(目前為 iPhone 18 Pro Max / iOS 27.0 + Windows 11 專業版)下運作正常;
-- **不保證在其他裝置、iOS 修補版本、網路環境、系統配置下都能穩定使用**;
-- 遇到問題時,歡迎到 [Issues](https://github.com/keezxc1223/locwarp/issues) 提交完整的環境資訊與日誌,協助定位與改善;
-- 本專案不保證永續維護,也不承擔因使用本工具所生的任何責任。
+- 本项目只保证在**开发者本人的测试环境**(当前为 iPhone 18 Pro Max / iOS 27.0 + Windows 11 专业版)下运作正常;
+- **不保证在其他设备、iOS 修补版本、网络环境、系统配置下都能稳定使用**;
+- 遇到问题时,欢迎到 [Issues](https://github.com/keezxc1223/locwarp/issues) 提交完整的环境信息与日志,协助定位与改善;
+- 本项目不保证永续维护,也不承担因使用本工具所生的任何责任。
 
 ---
 
 ## License
 
-本專案採用 **MIT License** 授權釋出,詳見 [LICENSE](LICENSE)。
+本项目采用 **MIT License** 授权释出,详见 [LICENSE](LICENSE)。
 
-允許自由使用、修改、再散佈與商業利用,惟須保留原始著作權與授權聲明。
-
----
-
-## Disclaimer(免責聲明)
-
-### 1. 僅限學術與研究用途
-
-本專案開發初衷僅供地理資訊系統(GIS)研究、行動應用程式開發測試、位置服務原型驗證及相關技術探討使用。請勿將本工具用於任何非法用途,或違反第三方服務條款、平台政策之行為。
-
-### 2. 帳號封禁風險
-
-本專案透過 pymobiledevice3 介接 Apple DVT / RemoteServices 協議,以模擬 GPS 訊號達成虛擬定位。若將本工具用於基於地理位置的遊戲(例如 Pokémon GO、Ingress、Monster Hunter Now 等)或社交、打卡、物流類應用,可能違反該平台的服務條款,進而導致帳號遭警告、限制、封鎖或永久停權。**開發者對因使用本工具所造成之任何帳號損失、虛擬財產損害或衍生糾紛,概不負責。**
-
-### 3. 系統與硬體風險
-
-本專案於 WiFi Tunnel 模式下需以**系統管理員權限**執行,以建立 TUN 虛擬網路介面並與 iOS 裝置協商 RSD(Remote Service Discovery)通道。雖然程式碼已經內部測試,但開發者不保證於所有 Windows 版本、硬體組合、網路環境下皆能穩定運行。常見的潛在狀況包括:
-
-- 與 VPN 軟體、第三方防火牆或網路虛擬化工具發生衝突,導致 Tunnel 建立失敗或系統網路暫時異常
-- 程式非正常結束時殘留的 TUN 介面需重新啟動系統始能清除
-- 連線中斷時需手動重試或重啟應用程式
-
-使用者應自行評估上述風險並承擔因此所產生之任何後果。本專案僅操作本身所建立之臨時網路介面與自身設定檔(位於 `~/.locwarp/`),**不會修改 iOS 裝置內任何使用者資料,亦不會變更作業系統核心檔案或既有裝置配對記錄**。
-
-### 4. 地圖資料準確性
-
-本專案前端採用 Leaflet,底圖由 OpenStreetMap 及其他第三方圖磚供應商提供,路線規劃使用 OSRM、Valhalla 與 BRouter 公共服務,地理編碼使用 Photon 等公共服務。地圖顯示之座標、路徑、地址資訊**僅供參考**,開發者不保證其完整性、即時性、正確性或與實際地理位置完全一致。使用者在依照地址搜尋、路線導航、隨機漫步等結果進行定位模擬前,應自行比對地圖顯示是否符合預期。
-
-### 5. 使用者責任
-
-使用者應自行遵守所在地之法律法規,包括但不限於《個人資料保護法》《著作權法》及相關國際條約。任何因濫用、誤用或違法使用本工具所引發之法律糾紛、民事賠償或刑事責任,均由使用者個人獨自承擔,與本專案之開發者及貢獻者無涉。
+允许自由使用、修改、再散布与商业利用,惟须保留原始著作权与授权声明。
 
 ---
 
-**下載、安裝或執行本軟體,即視為您已完整閱讀並同意上述全部免責條款。**
+## Disclaimer(免责声明)
 
-**若不同意,請立即停止使用並移除本軟體。**
+### 1. 仅限学术与研究用途
+
+本项目开发初衷仅供地理信息系统(GIS)研究、行动应用程序开发测试、位置服务原型验证及相关技术探讨使用。请勿将本工具用于任何非法用途,或违反第三方服务条款、平台政策之行为。
+
+### 2. 帐号封禁风险
+
+本项目通过 pymobiledevice3 介接 Apple DVT / RemoteServices 协议,以模拟 GPS 信号达成虚拟定位。若将本工具用于基于地理位置的游戏(例如 Pokémon GO、Ingress、Monster Hunter Now 等)或社交、打卡、物流类应用,可能违反该平台的服务条款,进而导致帐号遭警告、限制、封锁或永久停权。**开发者对因使用本工具所造成之任何帐号损失、虚拟财产损害或衍生纠纷,概不负责。**
+
+### 3. 系统与硬件风险
+
+本项目于 WiFi Tunnel 模式下需以**系统管理员权限**执行,以建立 TUN 虚拟网络接口并与 iOS 设备协商 RSD(Remote Service Discovery)通道。虽然代码已经内部测试,但开发者不保证于所有 Windows 版本、硬件组合、网络环境下皆能稳定运行。常见的潜在状况包括:
+
+- 与 VPN 软件、第三方防火墙或网络虚拟化工具发生冲突,导致 Tunnel 建立失败或系统网络暂时异常
+- 程序非正常结束时残留的 TUN 接口需重新启动系统始能清除
+- 连接中断时需手动重试或重启应用程序
+
+用户应自行评估上述风险并承担因此所产生之任何后果。本项目仅操作本身所建立之临时网络接口与自身配置文件(位于 `~/.locwarp/`),**不会修改 iOS 设备内任何用户资料,亦不会变更操作系统核心文件或既有设备配对记录**。
+
+### 4. 地图资料准确性
+
+本项目前端采用 Leaflet,底图由 OpenStreetMap 及其他第三方瓦片供应商提供,路线规划使用 OSRM、Valhalla 与 BRouter 公共服务,地理编码使用 Photon 等公共服务。地图显示之坐标、路径、地址信息**仅供参考**,开发者不保证其完整性、即时性、正确性或与实际地理位置完全一致。用户在依照地址搜索、路线导航、随机漫步等结果进行定位模拟前,应自行比对地图显示是否符合预期。
+
+### 5. 用户责任
+
+用户应自行遵守所在地之法律法规,包括但不限于《个人资料保护法》《著作权法》及相关国际条约。任何因滥用、误用或违法使用本工具所引发之法律纠纷、民事赔偿或刑事责任,均由用户个人独自承担,与本项目之开发者及贡献者无涉。
+
+---
+
+**下载、安装或执行本软件,即视为您已完整阅读并同意上述全部免责条款。**
+
+**若不同意,请立即停止使用并移除本软件。**

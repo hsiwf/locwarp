@@ -77,7 +77,7 @@ const RouteList: React.FC<RouteListProps> = ({
 }) => {
   const t = useT();
 
-  const displayCat = (name: string) => (name === '預設' ? t('bm.default') : name);
+  const displayCat = (name: string) => (name === '默认' ? t('bm.default') : name);
   const resolveColor = (cat: RouteCategory): string => cat.color || '#6c8cff';
   const findCategoryById = (id: string | undefined): RouteCategory | undefined =>
     categories.find((c) => c.id === id);
@@ -152,7 +152,7 @@ const RouteList: React.FC<RouteListProps> = ({
     if (sortMode === 'default') return list;
     const copy = [...list];
     if (sortMode === 'name') {
-      copy.sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant'));
+      copy.sort((a, b) => a.name.localeCompare(b.name, 'zh-Hans'));
     } else if (sortMode === 'date_added') {
       copy.sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
     } else if (sortMode === 'date_updated') {

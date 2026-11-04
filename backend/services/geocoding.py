@@ -261,7 +261,7 @@ class GeocodingService:
         params = {
             "address": query,
             "key": api_key,
-            "language": "zh-TW",
+            "language": "zh-CN",
         }
         logger.debug("Google geocode search: %s", query)
         async with httpx.AsyncClient(timeout=_TIMEOUT) as client:

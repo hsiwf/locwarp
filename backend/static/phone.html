@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hans">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
@@ -274,20 +274,20 @@
     <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polygon points="3 11 22 2 13 21 11 13 3 11" />
     </svg></span>
-    <span>導航到這裡</span>
+    <span>导航到这里</span>
   </div>
   <div class="btn" data-kind="search">
     <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="7" /><path d="m21 21-5-5" />
     </svg></span>
-    <span>搜尋地址</span>
+    <span>搜索地址</span>
   </div>
   <div class="btn" data-kind="coord">
     <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
       <circle cx="12" cy="10" r="3" />
     </svg></span>
-    <span>座標飛</span>
+    <span>坐标飞</span>
   </div>
   <div class="btn" data-kind="stop">
     <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2" /></svg></span>
@@ -297,31 +297,31 @@
     <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 12a9 9 0 1 0 3-6.7" /><path d="M3 4v5h5" />
     </svg></span>
-    <span>還原</span>
+    <span>还原</span>
   </div>
 </div>
 
-<button id="fab" aria-label="開啟功能">
+<button id="fab" aria-label="打开功能">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 5v14M5 12h14" />
   </svg>
 </button>
 
 <div id="sheet" role="dialog" aria-modal="true">
-  <h2 id="sheet-title">確認動作?</h2>
+  <h2 id="sheet-title">确认动作?</h2>
   <div class="coord" id="sheet-coord"></div>
   <div class="mode-row" id="sheet-modes" style="display:none">
     <button data-mode="walking" data-kmh="10.8" class="active">走路(10.8km/h)</button>
-    <button data-mode="running" data-kmh="19.8">腳踏車(19.8km/h)</button>
-    <button data-mode="driving" data-kmh="60">開車(60km/h)</button>
+    <button data-mode="running" data-kmh="19.8">自行车(19.8km/h)</button>
+    <button data-mode="driving" data-kmh="60">开车(60km/h)</button>
   </div>
   <div class="custom-speed" id="sheet-custom" style="display:none">
-    <label for="sheet-custom-input">自訂速度 (km/h)</label>
-    <input type="number" id="sheet-custom-input" inputmode="decimal" min="0.1" max="300" step="0.5" placeholder="留空使用上方預設" />
+    <label for="sheet-custom-input">自订速度 (km/h)</label>
+    <input type="number" id="sheet-custom-input" inputmode="decimal" min="0.1" max="300" step="0.5" placeholder="留空使用上方默认" />
   </div>
   <div class="row">
     <button class="ghost" id="sheet-cancel">取消</button>
-    <button class="primary" id="sheet-ok">確定</button>
+    <button class="primary" id="sheet-ok">确定</button>
   </div>
 </div>
 
@@ -330,11 +330,11 @@
 <!-- Search modal -->
 <div class="modal" id="search-modal">
   <div class="card">
-    <h3>搜尋地址</h3>
-    <input type="text" id="search-input" placeholder="輸入地名或地址" autocomplete="off" />
+    <h3>搜索地址</h3>
+    <input type="text" id="search-input" placeholder="输入地名或地址" autocomplete="off" />
     <div id="search-results"></div>
     <div class="btn-row">
-      <button class="ghost" id="search-close">關閉</button>
+      <button class="ghost" id="search-close">关闭</button>
     </div>
   </div>
 </div>
@@ -342,21 +342,21 @@
 <!-- Coord-fly modal -->
 <div class="modal" id="coord-modal">
   <div class="card">
-    <h3>座標飛</h3>
-    <input type="text" id="coord-input" placeholder="貼上座標,例如 25.0375, 121.5637" autocomplete="off" />
+    <h3>坐标飞</h3>
+    <input type="text" id="coord-input" placeholder="贴上坐标,例如 25.0375, 121.5637" autocomplete="off" />
     <div class="btn-row">
       <button class="ghost" id="coord-close">取消</button>
-      <button class="primary" id="coord-go">飛過去</button>
+      <button class="primary" id="coord-go">飞过去</button>
     </div>
   </div>
 </div>
 
 <div id="gate" style="display:none">
   <div class="card">
-    <h1>輸入 PIN</h1>
-    <p>在桌面 LocWarp 上點「手機操控」按鈕,把畫面顯示的 6 位數 PIN 輸入這裡。</p>
+    <h1>输入 PIN</h1>
+    <p>在桌面 LocWarp 上点「手机操控」按钮,把画面显示的 6 位数 PIN 输入这里。</p>
     <input id="pin-input" inputmode="numeric" maxlength="6" pattern="[0-9]*" placeholder="------" autocomplete="off" />
-    <button id="pin-submit" disabled>連線</button>
+    <button id="pin-submit" disabled>连接</button>
     <div class="err" id="pin-err"></div>
   </div>
 </div>
@@ -429,7 +429,7 @@
     const vv = window.visualViewport;
     if (vv && vv.scale > 1.05) {
       const tip = document.createElement('div');
-      tip.textContent = '畫面被縮放,請按 Ctrl+0 (Mac: Cmd+0) 重置,或兩指縮回正常';
+      tip.textContent = '画面被缩放,请按 Ctrl+0 (Mac: Cmd+0) 重置,或两指缩回正常';
       tip.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;' +
         'background:#ef5d5d;color:#fff;padding:10px 14px;font-size:13px;' +
         'text-align:center;font-weight:600;';
@@ -580,10 +580,10 @@
   let lastStatus = null;
   let lastState = '';
   const STATE_LABEL = {
-    idle: '待命', teleporting: '跳點中', navigating: '導航中',
-    looping: '循環中', joystick: '搖桿', random_walk: '隨機漫遊',
-    multi_stop: '多點', paused: '暫停', reconnecting: '重連中',
-    disconnected: '已斷線',
+    idle: '待命', teleporting: '跳点中', navigating: '导航中',
+    looping: '循环中', joystick: '摇杆', random_walk: '随机漫游',
+    multi_stop: '多点', paused: '暂停', reconnecting: '重连中',
+    disconnected: '已断线',
   };
   const pillsHost = document.getElementById('device-pills');
 
@@ -592,7 +592,7 @@
     if (!devices || devices.length === 0) {
       const pill = document.createElement('span');
       pill.className = 'pill no-device';
-      pill.innerHTML = '<span class="dot off"></span><span>未連接 iPhone</span>';
+      pill.innerHTML = '<span class="dot off"></span><span>未连接 iPhone</span>';
       pillsHost.appendChild(pill);
       return;
     }
@@ -675,7 +675,7 @@
       setOpen(false);
       if (kind === 'teleport') {
         pendingMode = 'teleport';
-        showActionMode('點地圖選位置 (瞬移)');
+        showActionMode('点地图选位置 (瞬移)');
       } else if (kind === 'navigate') {
         // Navigate routes from the *current* virtual position. If the
         // user hasn't teleported yet there's no origin, so guard here
@@ -684,11 +684,11 @@
         // thinking nav had worked).
         const cur = lastStatus && lastStatus.current_position;
         if (!cur || !lastStatus.connected) {
-          toast('還沒有虛擬位置,請先瞬移或飛座標', 'err');
+          toast('还没有虚拟位置,请先瞬移或飞坐标', 'err');
           return;
         }
         pendingMode = 'navigate';
-        showActionMode('點地圖選位置 (導航)');
+        showActionMode('点地图选位置 (导航)');
       } else if (kind === 'stop') {
         openSheet('stop');
       } else if (kind === 'restore') {
@@ -725,19 +725,19 @@
     sheetModes.style.display = 'none';
     sheetCustom.style.display = 'none';
     if (kind === 'teleport') {
-      sheetTitle.textContent = '確認瞬移?';
+      sheetTitle.textContent = '确认瞬移?';
       sheetCoord.textContent = lat.toFixed(6) + ', ' + lng.toFixed(6);
     } else if (kind === 'navigate') {
-      sheetTitle.textContent = '確認導航到這裡?';
+      sheetTitle.textContent = '确认导航到这里?';
       sheetCoord.textContent = lat.toFixed(6) + ', ' + lng.toFixed(6);
       sheetModes.style.display = '';
       sheetCustom.style.display = '';
     } else if (kind === 'stop') {
-      sheetTitle.textContent = '停止目前移動?';
-      sheetCoord.textContent = '保留虛擬位置,只停止路線動畫';
+      sheetTitle.textContent = '停止当前移动?';
+      sheetCoord.textContent = '保留虚拟位置,只停止路线动画';
     } else if (kind === 'restore') {
-      sheetTitle.textContent = '還原真實 GPS?';
-      sheetCoord.textContent = '清除虛擬定位,iPhone 回到真實位置';
+      sheetTitle.textContent = '还原真实 GPS?';
+      sheetCoord.textContent = '清除虚拟定位,iPhone 回到真实位置';
     }
     sheet.classList.add('open');
   }
@@ -768,7 +768,7 @@
           body.speed_kmh = customKmh;
         }
         await api('/api/phone/navigate', { method: 'POST', body });
-        toast(customKmh ? `已開始導航 (${customKmh} km/h)` : '已開始導航');
+        toast(customKmh ? `已开始导航 (${customKmh} km/h)` : '已开始导航');
       } else if (a.kind === 'stop') {
         await api('/api/phone/stop', { method: 'POST' });
         toast('已停止');
@@ -781,12 +781,12 @@
         } catch (e) { /* ignore; restore still proceeds */ }
         await api('/api/phone/restore', { method: 'POST' });
         clearCurrentPin();
-        toast('已還原 GPS');
+        toast('已还原 GPS');
       }
       closeSheet();
       pollStatus();
     } catch (e) {
-      toast('失敗: ' + e.message, 'err');
+      toast('失败: ' + e.message, 'err');
     } finally {
       sheetOk.disabled = false;
     }
@@ -813,13 +813,13 @@
         const r = await api('/api/phone/geocode?q=' + encodeURIComponent(q));
         renderSearchResults(r);
       } catch (e) {
-        searchResults.innerHTML = '<div class="empty">搜尋失敗: ' + e.message + '</div>';
+        searchResults.innerHTML = '<div class="empty">搜索失败: ' + e.message + '</div>';
       }
     }, 350);
   });
   function renderSearchResults(items) {
     if (!items || items.length === 0) {
-      searchResults.innerHTML = '<div class="empty">沒有結果</div>';
+      searchResults.innerHTML = '<div class="empty">没有结果</div>';
       return;
     }
     searchResults.innerHTML = '';
@@ -850,16 +850,16 @@
   }
   async function submitCoord() {
     const parsed = parseCoord(coordInput.value);
-    if (!parsed) { toast('讀不到有效座標', 'err'); return; }
+    if (!parsed) { toast('读不到有效坐标', 'err'); return; }
     const { lat, lng } = parsed;
     coordModal.classList.remove('open');
     try {
       await api('/api/phone/teleport', { method: 'POST', body: { lat, lng } });
-      toast('已飛到 ' + lat.toFixed(5) + ', ' + lng.toFixed(5));
+      toast('已飞到 ' + lat.toFixed(5) + ', ' + lng.toFixed(5));
       map.setView([lat, lng], Math.max(map.getZoom(), 15));
       pollStatus();
     } catch (e) {
-      toast('失敗: ' + e.message, 'err');
+      toast('失败: ' + e.message, 'err');
     }
   }
   document.getElementById('coord-go').addEventListener('click', submitCoord);
@@ -902,7 +902,7 @@
         body: JSON.stringify({ pin: pinInput.value }),
       });
       if (!r.ok) {
-        pinErr.textContent = 'PIN 不正確';
+        pinErr.textContent = 'PIN 不正确';
         pinSubmit.disabled = false;
         return;
       }
@@ -912,7 +912,7 @@
       hideGate();
       pollStatus();
     } catch (e) {
-      pinErr.textContent = '連線失敗,請重試';
+      pinErr.textContent = '连接失败,请重试';
       pinSubmit.disabled = false;
     }
   });

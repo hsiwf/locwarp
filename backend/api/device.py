@@ -47,7 +47,7 @@ async def wifi_tunnel_connect(req: WifiTunnelConnectRequest):
     if len(dm._connections) >= MAX_DEVICES:
         raise HTTPException(
             status_code=409,
-            detail={"code": "max_devices_reached", "message": f"已連接最多 {MAX_DEVICES} 台裝置"},
+            detail={"code": "max_devices_reached", "message": f"已连接最多 {MAX_DEVICES} 台设备"},
         )
     try:
         info = await dm.connect_wifi_tunnel(req.rsd_address, req.rsd_port)
@@ -75,9 +75,9 @@ async def wifi_tunnel_connect(req: WifiTunnelConnectRequest):
             detail={
                 "code": "ios_unsupported",
                 "message": (
-                    f"偵測到 iOS {e.version},LocWarp 自 v0.1.49 起僅支援 "
+                    f"检测到 iOS {e.version},LocWarp 自 v0.1.49 起仅支持 "
                     f"iOS {UnsupportedIosVersionError.MIN_VERSION} 以上。"
-                    f"請將裝置升級至 iOS {UnsupportedIosVersionError.MIN_VERSION} 或更新版本後再連線。"
+                    f"请将设备升级至 iOS {UnsupportedIosVersionError.MIN_VERSION} 或更新版本后再连接。"
                 ),
                 "ios_version": e.version,
                 "min_version": UnsupportedIosVersionError.MIN_VERSION,
@@ -138,7 +138,7 @@ async def wifi_repair():
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail={"code": "usbmux_unavailable", "message": f"無法列出 USB 裝置:{e}"},
+            detail={"code": "usbmux_unavailable", "message": f"无法列出 USB 设备:{e}"},
         )
 
     # Prefer a USB-attached device (Network entries won't help us regenerate
@@ -149,7 +149,7 @@ async def wifi_repair():
             status_code=400,
             detail={
                 "code": "repair_needs_usb",
-                "message": "請先用 USB 線連接 iPhone。重新配對需要 USB 觸發『信任這台電腦』提示。",
+                "message": "请先用 USB 线连接 iPhone。重新配对需要 USB 触发『信任这台电脑』提示。",
             },
         )
 
@@ -164,7 +164,7 @@ async def wifi_repair():
             status_code=500,
             detail={
                 "code": "trust_failed",
-                "message": f"USB 信任失敗 — 請在 iPhone 解鎖畫面上點「信任」後再試:{e}",
+                "message": f"USB 信任失败 — 请在 iPhone 解锁画面上点「信任」后再试:{e}",
                 "udid": udid,
             },
         )
@@ -231,11 +231,11 @@ async def wifi_repair():
             _tunnel_logger.exception("Re-pair: RemotePairing handshake failed")
             msg = str(e)
             if "PairingDialogResponsePending" in msg or "consent" in msg.lower():
-                friendly = "請在 iPhone 解鎖螢幕上按「信任」後重試(timeout 只有幾秒)。"
+                friendly = "请在 iPhone 解锁屏幕上按「信任」后重试(timeout 只有几秒)。"
             elif "not paired" in msg.lower() or "pairingerror" in msg.lower():
-                friendly = "USB 配對失效,請拔 USB 重插一次並按信任。"
+                friendly = "USB 配对失效,请拔 USB 重插一次并按信任。"
             else:
-                friendly = f"RemotePairing 握手失敗:{msg}"
+                friendly = f"RemotePairing 握手失败:{msg}"
             raise HTTPException(
                 status_code=500,
                 detail={
@@ -993,7 +993,7 @@ async def wifi_tunnel_start(req: WifiTunnelStartRequest):
         if live_count >= MAX_DEVICES:
             raise HTTPException(
                 status_code=409,
-                detail={"code": "max_devices_reached", "message": f"已連接最多 {MAX_DEVICES} 台裝置"},
+                detail={"code": "max_devices_reached", "message": f"已连接最多 {MAX_DEVICES} 台设备"},
             )
 
         candidates = _build_tunnel_udid_candidates(req)
@@ -1142,9 +1142,9 @@ async def wifi_tunnel_start(req: WifiTunnelStartRequest):
         if isinstance(last_error, asyncio.TimeoutError):
             raise HTTPException(
                 status_code=500,
-                detail={"code": "tunnel_timeout", "message": "Tunnel 啟動逾時"},
+                detail={"code": "tunnel_timeout", "message": "Tunnel 启动超时"},
             ) from last_error
-        msg = f"無法啟動 tunnel:{last_error}" if last_error else "無法啟動 tunnel"
+        msg = f"无法启动 tunnel:{last_error}" if last_error else "无法启动 tunnel"
         raise HTTPException(
             status_code=500,
             detail={"code": "tunnel_spawn_failed", "message": msg},
@@ -1290,7 +1290,7 @@ async def wifi_tunnel_start_and_connect(req: WifiTunnelStartRequest):
         if live_count >= MAX_DEVICES:
             raise HTTPException(
                 status_code=409,
-                detail={"code": "max_devices_reached", "message": f"已連接最多 {MAX_DEVICES} 台裝置"},
+                detail={"code": "max_devices_reached", "message": f"已连接最多 {MAX_DEVICES} 台设备"},
             )
 
     tunnel_result = await wifi_tunnel_start(req)
@@ -1308,7 +1308,7 @@ async def wifi_tunnel_start_and_connect(req: WifiTunnelStartRequest):
     if len(dm._connections) >= MAX_DEVICES:
         raise HTTPException(
             status_code=409,
-            detail={"code": "max_devices_reached", "message": f"已連接最多 {MAX_DEVICES} 台裝置"},
+            detail={"code": "max_devices_reached", "message": f"已连接最多 {MAX_DEVICES} 台设备"},
         )
     try:
         info = await dm.connect_wifi_tunnel(rsd_address, rsd_port)
@@ -1439,7 +1439,7 @@ async def amfi_reveal_developer_mode(udid: str):
     if conn is None:
         raise HTTPException(
             status_code=404,
-            detail={"code": "device_not_connected", "message": "裝置未連線,請先連線再試"},
+            detail={"code": "device_not_connected", "message": "设备未连接,请先连接再试"},
         )
 
     # iOS 15 and below have no Developer Mode concept.
@@ -1452,7 +1452,7 @@ async def amfi_reveal_developer_mode(udid: str):
             status_code=400,
             detail={
                 "code": "ios_too_old",
-                "message": f"iOS {conn.ios_version} 沒有開發者模式,不需要此操作",
+                "message": f"iOS {conn.ios_version} 没有开发者模式,不需要此操作",
             },
         )
 
@@ -1461,7 +1461,7 @@ async def amfi_reveal_developer_mode(udid: str):
     except ImportError as exc:
         raise HTTPException(
             status_code=500,
-            detail={"code": "amfi_not_available", "message": f"AMFI 服務載入失敗: {exc}"},
+            detail={"code": "amfi_not_available", "message": f"AMFI 服务加载失败: {exc}"},
         )
 
     # AMFI is a legacy lockdown service (com.apple.amfi.lockdown) that's only
@@ -1475,7 +1475,7 @@ async def amfi_reveal_developer_mode(udid: str):
             status_code=400,
             detail={
                 "code": "amfi_needs_usb",
-                "message": "AMFI 需要走 USB 連線。請插 USB 後再試(WiFi tunnel 不 advertise AMFI 服務)。",
+                "message": "AMFI 需要走 USB 连接。请插 USB 后再试(WiFi tunnel 不 advertise AMFI 服务)。",
             },
         )
 
@@ -1486,7 +1486,7 @@ async def amfi_reveal_developer_mode(udid: str):
             status_code=500,
             detail={
                 "code": "amfi_reveal_failed",
-                "message": f"AMFI reveal 失敗: {exc.__class__.__name__}: {exc}",
+                "message": f"AMFI reveal 失败: {exc.__class__.__name__}: {exc}",
             },
         )
 
@@ -1502,7 +1502,7 @@ async def connect_device(udid: str):
     if udid not in dm._connections and len(dm._connections) >= MAX_DEVICES:
         raise HTTPException(
             status_code=409,
-            detail={"code": "max_devices_reached", "message": f"已連接最多 {MAX_DEVICES} 台裝置"},
+            detail={"code": "max_devices_reached", "message": f"已连接最多 {MAX_DEVICES} 台设备"},
         )
     try:
         await dm.connect(udid)
@@ -1526,9 +1526,9 @@ async def connect_device(udid: str):
             detail={
                 "code": "ios_unsupported",
                 "message": (
-                    f"偵測到 iOS {e.version},LocWarp 自 v0.1.49 起僅支援 "
+                    f"检测到 iOS {e.version},LocWarp 自 v0.1.49 起仅支持 "
                     f"iOS {UnsupportedIosVersionError.MIN_VERSION} 以上。"
-                    f"請將裝置升級至 iOS {UnsupportedIosVersionError.MIN_VERSION} 或更新版本後再連線。"
+                    f"请将设备升级至 iOS {UnsupportedIosVersionError.MIN_VERSION} 或更新版本后再连接。"
                 ),
                 "ios_version": e.version,
                 "min_version": UnsupportedIosVersionError.MIN_VERSION,

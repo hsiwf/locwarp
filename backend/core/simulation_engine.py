@@ -353,7 +353,7 @@ class SimulationEngine:
         straight_line: bool = False,
         route_engine: str | None = None,
     ) -> None:
-        """種花模式: circle around each waypoint."""
+        """种花模式: circle around each waypoint."""
         await self._ensure_stopped()
         self._stop_event.clear()
         self._pause_event.set()

@@ -329,8 +329,8 @@ class DeviceManager:
                 udid, ios_version,
             )
             raise RuntimeError(
-                f"無法建立裝置通道 (iOS {ios_version})。"
-                f"請以系統管理員身份執行 LocWarp。"
+                f"无法建立设备通道 (iOS {ios_version})。"
+                f"请以系统管理员身份执行 LocWarp。"
             )
 
     # iOS < 17 path removed in v0.1.49 — see UnsupportedIosVersionError.
@@ -438,7 +438,7 @@ class DeviceManager:
         the DDI. On iOS 26.4.1 the 20MB image upload routinely dropped
         the RSD tunnel mid-transfer, poisoning subsequent DVT calls
         with InvalidService. We now rely on the iPhone already having
-        the DDI mounted (Xcode, 3uTools, 愛思助手, pymobiledevice3 CLI,
+        the DDI mounted (Xcode, 3uTools, 爱思助手, pymobiledevice3 CLI,
         or an earlier successful mount that iOS is still caching).
 
         This method is therefore a pure status check. If the iPhone
@@ -491,8 +491,8 @@ class DeviceManager:
             await broadcast("ddi_not_mounted", {
                 "udid": conn.udid,
                 "hint": (
-                    "iPhone 上未偵測到 DDI。請先為這支 iPhone 掛載一次 DDI(Developer Disk Image),"
-                    "再重新連接 LocWarp;或先重開 iPhone 後再試。"
+                    "iPhone 上未检测到 DDI。请先为这支 iPhone 挂载一次 DDI(Developer Disk Image),"
+                    "再重新连接 LocWarp;或先重开 iPhone 后再试。"
                 ),
             })
         except Exception:
@@ -680,8 +680,8 @@ class DeviceManager:
         if last_exc is not None:
             logger.error("Failed to connect to RSD at %s:%d after retries", rsd_address, rsd_port)
             raise RuntimeError(
-                f"無法連線到 WiFi tunnel RSD ({rsd_address}:{rsd_port})。"
-                "請確認 WiFi tunnel 仍然活躍。"
+                f"无法连接到 WiFi tunnel RSD ({rsd_address}:{rsd_port})。"
+                "请确认 WiFi tunnel 仍然活跃。"
             ) from last_exc
 
         peer = rsd.peer_info or {}

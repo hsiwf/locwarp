@@ -1,4 +1,4 @@
-"""種花模式 navigator -- circle around each waypoint (flower)."""
+"""种花模式 navigator -- circle around each waypoint (flower)."""
 
 from __future__ import annotations
 
@@ -187,7 +187,7 @@ class FlowerHandler:
             # teleport is on. The teleport toggle only governs how the
             # device reaches the flower; circling it is on-foot so the
             # game registers the loop. `segments` sets the polygon
-            # smoothness (more = rounder, fewer = 省座標).
+            # smoothness (more = rounder, fewer = 省坐标).
             pts = _circle_points(wp, radius_m, segments)
             await _walk(_circle_path(wp, pts, circles))
             return engine._stop_event.is_set()

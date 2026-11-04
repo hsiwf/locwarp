@@ -3,7 +3,7 @@
 **A Windows tool that controls the GPS location of an iPhone or iPad.** No jailbreak. Works over USB or Wi-Fi, with Teleport, Navigate, Multi-point Route, Flower Farmer circling, Random Walk, and Joystick modes, and can drive up to three devices at once.
 
 <p align="right">
-  <a href="README.md"><img alt="繁體中文" src="https://img.shields.io/badge/繁體中文-gray?style=flat-square"></a>
+  <a href="README.md"><img alt="简体中文" src="https://img.shields.io/badge/简体中文-gray?style=flat-square"></a>
   <a href="README.en.md"><img alt="English" src="https://img.shields.io/badge/English-active-2d3748?style=flat-square"></a>
 </p>
 
@@ -178,7 +178,7 @@ Control LocWarp from a phone browser when you are away from the PC. The "Phone c
 ### Other
 
 - **Cooldown**: a cooldown based on teleport distance, to lower the risk of being flagged for impossible movement.
-- The interface switches between Traditional Chinese and English on the fly.
+- The interface switches between Simplified Chinese and English on the fly.
 - Route completion sound, and a hardware acceleration switch (turning it off fixes ghosting or a black window on some GPU drivers, see [Issue #24](https://github.com/keezxc1223/locwarp/issues/24)).
 - All data (saved coordinates, routes, settings) lives in `~/.locwarp/` and survives a reinstall.
 

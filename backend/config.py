@@ -57,7 +57,7 @@ class SpeedProfile(TypedDict):
 # Speed profiles (m/s). Defaults align with the frontend ControlPanel
 # preset chips (10.8 / 19.8 / 60 km/h). v0.2.84 lifted these from the
 # v0.1.0 numbers (1.4 / 2.8 / 11.1) which dated from when "running" still
-# meant actual running; the i18n label was later renamed to 腳踏車 and
+# meant actual running; the i18n label was later renamed to 自行车 and
 # the chip value bumped to bike speed without touching the backend.
 SPEED_PROFILES: dict[str, SpeedProfile] = {
     "walking": {"speed_mps": 3.0, "jitter": 0.5, "update_interval": 1.0},

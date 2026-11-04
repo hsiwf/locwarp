@@ -112,7 +112,7 @@ class MultiStopRequest(BaseModel):
 
 
 class FlowerRequest(BaseModel):
-    """種花模式 — visit each waypoint and walk a circle around it.
+    """种花模式 — visit each waypoint and walk a circle around it.
 
     For every waypoint the device (optionally) travels there, waits, then
     walks ``circles`` laps around a circle of radius ``radius_m`` made of

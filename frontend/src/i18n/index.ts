@@ -50,7 +50,7 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 
   useEffect(() => {
-    document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
   }, [lang]);
 
   return React.createElement(I18nContext.Provider, { value: { lang, setLang, t } }, children);

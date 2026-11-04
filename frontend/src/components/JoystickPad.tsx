@@ -6,7 +6,7 @@ interface JoystickPadProps {
   intensity: number;
   onMove: (direction: number, intensity: number) => void;
   onRelease: () => void;
-  // True once the user has pressed 開始 and the joystick session is live.
+  // True once the user has pressed 开始 and the joystick session is live.
   // While false the pad is shown but inert, so we surface a hint.
   active?: boolean;
   // Whether a simulated position exists yet. The joystick moves relative to

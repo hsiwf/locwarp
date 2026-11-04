@@ -128,9 +128,9 @@ const BookmarkList: React.FC<BookmarkListProps> = ({
   // Name of the category whose dot is currently being recolored (shows popover).
   const [colorPickerFor, setColorPickerFor] = useState<string | null>(null);
   const t = useT();
-  // Backend may store the built-in default category as the Chinese '預設'.
+  // Backend may store the built-in default category as the Chinese '默认'.
   // Translate at render time so EN users see "Default" without touching storage.
-  const displayCat = (name: string) => (name === '預設' ? t('bm.default') : name);
+  const displayCat = (name: string) => (name === '默认' ? t('bm.default') : name);
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
   const [uiStateLoaded, setUiStateLoaded] = useState(false);
   const uiStateSaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -247,7 +247,7 @@ const BookmarkList: React.FC<BookmarkListProps> = ({
     if (sortMode === 'default') return list;
     const copy = [...list];
     if (sortMode === 'name') {
-      copy.sort((a, b) => a.name.localeCompare(b.name, 'zh-Hant'));
+      copy.sort((a, b) => a.name.localeCompare(b.name, 'zh-Hans'));
     } else if (sortMode === 'date_added') {
       copy.sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
     } else if (sortMode === 'last_used') {
@@ -1016,7 +1016,7 @@ const BookmarkList: React.FC<BookmarkListProps> = ({
               ) : (
                 <span style={{ flex: 1 }}>{displayCat(cat)}</span>
               )}
-              {cat !== 'Default' && cat !== '預設' && onCategoryRename && editingCategory !== cat && (
+              {cat !== 'Default' && cat !== '默认' && onCategoryRename && editingCategory !== cat && (
                 <button
                   onClick={() => { setEditingCategory(cat); setEditCategoryName(cat); }}
                   title={t('bm.rename_category')}
@@ -1035,7 +1035,7 @@ const BookmarkList: React.FC<BookmarkListProps> = ({
                   </svg>
                 </button>
               )}
-              {cat !== 'Default' && cat !== '預設' && (
+              {cat !== 'Default' && cat !== '默认' && (
                 <button
                   onClick={() => onCategoryDelete(cat)}
                   style={{

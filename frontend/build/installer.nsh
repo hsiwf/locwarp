@@ -24,13 +24,6 @@
   LangString LOCWARP_FINISH_TEXT ${LANGID} "LocWarp has been installed on this computer.$\r$\n$\r$\nBefore the first run, turn on Developer Mode on your iPhone and connect it over USB."
 !macroend
 
-!macro LOCWARP_STRINGS_ZH_TW LANGID
-  LangString LOCWARP_WELCOME_TITLE ${LANGID} "歡迎使用 LocWarp"
-  LangString LOCWARP_WELCOME_TEXT ${LANGID} "LocWarp 是一套免費、開放原始碼的 iOS 模擬定位工具。$\r$\n$\r$\n用 USB 或 Wi-Fi 連上 iPhone 後,就能在地圖上指定位置、沿路徑移動,或把常用地點存成座標。不必越獄,也不需要註冊帳號。$\r$\n$\r$\n安裝過程需要系統管理員權限。按「下一步」繼續。"
-  LangString LOCWARP_FINISH_TITLE ${LANGID} "安裝完成"
-  LangString LOCWARP_FINISH_TEXT ${LANGID} "LocWarp 已經安裝到這台電腦。$\r$\n$\r$\n第一次使用前,請先在 iPhone 上開啟開發者模式,並用 USB 連接電腦。"
-!macroend
-
 !macro LOCWARP_STRINGS_ZH_CN LANGID
   LangString LOCWARP_WELCOME_TITLE ${LANGID} "欢迎使用 LocWarp"
   LangString LOCWARP_WELCOME_TEXT ${LANGID} "LocWarp 是一款免费、开源的 iOS 虚拟定位工具。$\r$\n$\r$\n用 USB 或 Wi-Fi 连上 iPhone 后,就能在地图上指定位置、沿路径移动,或把常用地点存成坐标。无需越狱,也不用注册账号。$\r$\n$\r$\n安装过程需要管理员权限。点击「下一步」继续。"
@@ -39,7 +32,6 @@
 !macroend
 
 !macro customHeader
-  !insertmacro LOCWARP_STRINGS_ZH_TW ${LANG_TRADCHINESE}
   !insertmacro LOCWARP_STRINGS_ZH_CN ${LANG_SIMPCHINESE}
 
   !insertmacro LOCWARP_STRINGS_EN ${LANG_ENGLISH}

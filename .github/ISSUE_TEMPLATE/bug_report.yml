@@ -1,5 +1,5 @@
-name: Bug 回報
-description: 回報使用上遇到的問題或異常行為
+name: Bug 回报
+description: 回报使用上遇到的问题或异常行为
 title: "[Bug] "
 labels: ["bug"]
 body:
@@ -27,24 +27,24 @@ body:
   - type: input
     id: iphone-model
     attributes:
-      label: iPhone 機型
+      label: iPhone 机型
       placeholder: 例如 iPhone 16 Pro Max
 
   - type: dropdown
     id: connection
     attributes:
-      label: 連線方式
+      label: 连接方式
       options:
-        - USB 有線
+        - USB 有线
         - WiFi Tunnel(iOS 17+)
-        - 舊版 WiFi 直連(iOS 17 以下)
+        - 旧版 WiFi 直连(iOS 17 以下)
     validations:
       required: true
 
   - type: textarea
     id: description
     attributes:
-      label: 問題描述
-      description: 請描述遇到的問題、重現步驟、錯誤訊息、截圖等
+      label: 问题描述
+      description: 请描述遇到的问题、重现步骤、错误信息、截图等
     validations:
       required: true

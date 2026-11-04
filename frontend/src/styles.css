@@ -550,7 +550,7 @@ textarea:focus {
      <label class="lw-checkbox">
        <input type="checkbox" checked={x} onChange={...} />
        <span class="lw-checkbox-box"></span>
-       <span class="lw-checkbox-label">標籤文字</span>
+       <span class="lw-checkbox-label">标签文字</span>
      </label>
    ===================================================================== */
 .lw-checkbox {

@@ -64,7 +64,7 @@ async def _engine(udid: str | None = None):
     if target_udid is None:
         raise HTTPException(
             status_code=400,
-            detail={"code": "no_device", "message": "尚未連接任何 iOS 裝置,請先透過 USB 連線"},
+            detail={"code": "no_device", "message": "尚未连接任何 iOS 设备,请先通过 USB 连接"},
         )
 
     # Attempt 1: rebuild engine on top of existing connection
@@ -96,26 +96,26 @@ async def _engine(udid: str | None = None):
         status_code=400,
         detail={
             "code": "no_device",
-            "message": "裝置連線已失效,請嘗試重新插拔 USB 或重新啟動 LocWarp(詳見 ~/.locwarp/logs/backend.log)",
+            "message": "设备连接已失效,请尝试重新插拔 USB 或重新启动 LocWarp(详见 ~/.locwarp/logs/backend.log)",
         },
     )
 
 
 _DEVICE_LOST_REASON_MESSAGES: dict[str, str] = {
     DeviceLostError.REASON_TUNNEL_DEAD: (
-        "WiFi 連線中斷,請確認手機 WiFi 與電腦同網段、解鎖手機後再試"
+        "WiFi 连接中断,请确认手机 WiFi 与电脑同网段、解锁手机后再试"
     ),
     DeviceLostError.REASON_LOCKDOWN_DEAD: (
-        "裝置回應停止,請解鎖手機螢幕後再試"
+        "设备回应停止,请解锁手机屏幕后再试"
     ),
     DeviceLostError.REASON_DDI_MISSING: (
-        "Developer Disk Image 未掛載,請重新插拔 USB 或重新啟動裝置"
+        "Developer Disk Image 未挂载,请重新插拔 USB 或重新启动设备"
     ),
     DeviceLostError.REASON_USB_GONE: (
-        "USB 已拔除,請重新插上後再操作"
+        "USB 已拔除,请重新插上后再操作"
     ),
     DeviceLostError.REASON_UNKNOWN: (
-        "裝置連線中斷(USB 拔除或 Tunnel 死亡),請重新插上 USB 後再操作"
+        "设备连接中断(USB 拔除或 Tunnel 死亡),请重新插上 USB 后再操作"
     ),
 }
 
@@ -281,7 +281,7 @@ async def apply_speed(req: ApplySpeedRequest):
         raise HTTPException(
             status_code=400,
             detail={"code": "no_active_route",
-                    "message": "目前沒有進行中的路線,無法套用新速度"},
+                    "message": "当前没有进行中的路线,无法套用新速度"},
         )
     return {"status": "applied", "speed_mps": profile["speed_mps"]}
 
@@ -304,7 +304,7 @@ async def teleport(req: TeleportRequest):
             status_code=429,
             detail={
                 "code": "cooldown_active",
-                "message": f"冷卻中,還需等待 {int(cooldown.remaining)} 秒",
+                "message": f"冷却中,还需等待 {int(cooldown.remaining)} 秒",
                 "remaining_seconds": cooldown.remaining,
             },
         )

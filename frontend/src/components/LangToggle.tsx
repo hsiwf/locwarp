@@ -23,7 +23,7 @@ const LangToggle: React.FC = () => {
         gap: 2,
         padding: 0,
       }}
-      title="Language / 語言"
+      title="Language / 语言"
     >
       <button onClick={() => setLang('zh')} style={btnStyle(lang === 'zh')}>中文</button>
       <span style={{ color: 'rgba(255,255,255,0.15)' }}>|</span>

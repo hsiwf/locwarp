@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LocWarp 安裝教學</title>
-<meta name="description" content="LocWarp 安裝與前置設定:下載、Apple USB driver、USB 信任、開啟開發者模式,以及常見問題。">
+<title>LocWarp 安装教学</title>
+<meta name="description" content="LocWarp 安装与前置设置:下载、Apple USB driver、USB 信任、打开开发者模式,以及常见问题。">
 <style>
   :root{
     --bg:#ffffff;--bg-soft:#f5f6f8;--line:#e3e5e9;
@@ -102,10 +102,10 @@
   <div class="top-in">
     <a class="logo" href="#"><i></i>LocWarp</a>
     <nav>
-      <a href="#install">安裝</a>
-      <a href="#faq">常見問題</a>
+      <a href="#install">安装</a>
+      <a href="#faq">常见问题</a>
       <a href="#features">功能</a>
-      <a class="keep" href="https://github.com/keezxc1223/locwarp/releases">下載</a>
+      <a class="keep" href="https://github.com/keezxc1223/locwarp/releases">下载</a>
     </nav>
   </div>
 </header>
@@ -113,37 +113,37 @@
 <main class="wrap">
 
   <section class="hero">
-    <h1>LocWarp 安裝教學</h1>
-    <p>在 Windows 上模擬 iPhone 定位。照下面四步做完就能用,大約 5 到 10 分鐘。</p>
+    <h1>LocWarp 安装教学</h1>
+    <p>在 Windows 上模拟 iPhone 定位。照下面四步做完就能用,大约 5 到 10 分钟。</p>
     <div class="req">
-      <span>電腦:Windows 10 / 11(64 位元)</span>
-      <span>裝置:iOS 17 以上,iOS 16 由社群維護</span>
-      <span>連線:USB,或同一個 WiFi</span>
+      <span>电脑:Windows 10 / 11(64 位元)</span>
+      <span>设备:iOS 17 以上,iOS 16 由社群维护</span>
+      <span>连接:USB,或同一个 WiFi</span>
     </div>
   </section>
 
-  <h2 class="sec" id="install">四個步驟</h2>
+  <h2 class="sec" id="install">四个步骤</h2>
 
   <article class="step">
     <div class="n">1</div>
     <div>
-      <h3>下載並安裝 LocWarp</h3>
-      <p>抓最新版的 Windows 安裝檔,檔名像 <code>LocWarp Setup X.X.XXX.exe</code>。兩個來源內容相同。</p>
+      <h3>下载并安装 LocWarp</h3>
+      <p>抓最新版的 Windows 安装包,档名像 <code>LocWarp Setup X.X.XXX.exe</code>。两个来源内容相同。</p>
       <div class="btns">
         <a class="btn pri" href="https://github.com/keezxc1223/locwarp/releases/latest">GitHub Releases</a>
-        <a class="btn" href="https://drive.google.com/drive/folders/1bqVnNnSbwrVaf2GT6fEhW6R0ZlhE-fc3?usp=drive_link">Google 雲端</a>
+        <a class="btn" href="https://drive.google.com/drive/folders/1bqVnNnSbwrVaf2GT6fEhW6R0ZlhE-fc3?usp=drive_link">Google 云端</a>
       </div>
       <div class="note warn">
-        <b class="t">出現「Windows 已保護您的電腦」</b>
-        LocWarp 沒有做數位簽章,第一次執行會被 SmartScreen 擋。點「其他資訊」再點「仍要執行」即可。
+        <b class="t">出现「Windows 已保护您的电脑」</b>
+        LocWarp 没有做数字签名,第一次执行会被 SmartScreen 挡。点「其他信息」再点「仍要执行」即可。
       </div>
       <div class="note">
-        <b class="t">安裝與執行都需要系統管理員權限</b>
-        WiFi Tunnel 需要建立虛擬網路介面,所以安裝時會要求管理員權限,每次開啟也會跳 UAC。
+        <b class="t">安装与执行都需要系统管理员权限</b>
+        WiFi Tunnel 需要建立虚拟网络接口,所以安装时会要求管理员权限,每次打开也会跳 UAC。
       </div>
       <div class="note warn">
-        <b class="t">防毒軟體把後端程式隔離</b>
-        開啟後若提示後端程式不存在,是防毒把未簽章的 exe 刪了。先把安裝資料夾加入防毒的排除清單,再重新安裝一次。
+        <b class="t">防毒软件把后端程序隔离</b>
+        打开后若提示后端程序不存在,是防毒把未签名的 exe 删了。先把安装文件夹加入防毒的排除列表,再重新安装一次。
       </div>
     </div>
   </article>
@@ -151,8 +151,8 @@
   <article class="step">
     <div class="n">2</div>
     <div>
-      <h3>安裝 Apple USB driver</h3>
-      <p>Windows 沒有內建 Apple 的 USB driver。下列三種擇一安裝即可,多數人裝桌面版 iTunes 就能用。</p>
+      <h3>安装 Apple USB driver</h3>
+      <p>Windows 没有内建 Apple 的 USB driver。下列三种择一安装即可,多数人装桌面版 iTunes 就能用。</p>
       <div class="btns">
         <a class="btn pri" href="https://secure-appldnld.apple.com/itunes12/047-76416-20260302-fefe4356-211d-4da1-8bc4-058eb36ea803/iTunes64Setup.exe">桌面版 iTunes(64-bit)</a>
         <a class="btn" href="https://apps.microsoft.com/detail/9pb2mz1zmb1s" target="_blank" rel="noopener">Store 版 iTunes</a>
@@ -160,7 +160,7 @@
       </div>
       <div class="note ok">
         <b class="t">iTunes 抓不到 iPhone</b>
-        社群回報改裝 Microsoft Store 的 Apple Devices 可以成功。
+        社群回报改装 Microsoft Store 的 Apple Devices 可以成功。
       </div>
     </div>
   </article>
@@ -168,18 +168,18 @@
   <article class="step">
     <div class="n">3</div>
     <div>
-      <h3>USB 連接並信任電腦</h3>
-      <p>用<strong>原廠或支援資料傳輸</strong>的 USB 線接上 iPhone。iPhone 跳出「要信任這部電腦嗎?」時點「信任」並輸入密碼。</p>
+      <h3>USB 连接并信任电脑</h3>
+      <p>用<strong>原厂或支持资料传输</strong>的 USB 线接上 iPhone。iPhone 跳出「要信任这部电脑吗?」时点「信任」并输入密码。</p>
       <div class="note warn">
-        <b class="t">沒跳提示、或電腦抓不到手機</b>
-        先打開 iTunes 或 Apple Devices 看有沒有偵測到裝置。連 iTunes 都看不到,多半是線或孔的問題:
+        <b class="t">没跳提示、或电脑抓不到手机</b>
+        先打开 iTunes 或 Apple Devices 看有没有检测到设备。连 iTunes 都看不到,多半是线或孔的问题:
         <ul>
-          <li>很多副廠線、附贈線只能充電,沒有資料腳位。換原廠線或標示支援資料傳輸的線。</li>
-          <li>接頭鬆動或進灰塵會時好時壞,換線並清乾淨兩端。</li>
-          <li>改插主機板後方的 USB 孔,避開前面板、延長線、USB hub 與螢幕上的孔。</li>
-          <li>USB 3.x(藍色孔)對 iPhone 有時反而不穩,試試 USB 2.0(黑色孔),反過來也試。</li>
-          <li>iPhone 要解鎖並停在桌面。之前誤按「不信任」的話,到「設定 › 一般 › 移轉或重置 iPhone › 重置 › 重置位置與隱私權」,重插就會再問一次。</li>
-          <li>最後才試 iPhone 與電腦各重開一次。</li>
+          <li>很多副厂线、附赠线只能充电,没有资料脚位。换原厂线或标示支持资料传输的线。</li>
+          <li>接头松动或进灰尘会时好时坏,换线并清干净两端。</li>
+          <li>改插主机板后方的 USB 孔,避开前面板、延长线、USB hub 与屏幕上的孔。</li>
+          <li>USB 3.x(蓝色孔)对 iPhone 有时反而不稳,试试 USB 2.0(黑色孔),反过来也试。</li>
+          <li>iPhone 要解锁并停在桌面。之前误按「不信任」的话,到「设置 › 一般 › 移转或重置 iPhone › 重置 › 重置位置与隐私权」,重插就会再问一次。</li>
+          <li>最后才试 iPhone 与电脑各重开一次。</li>
         </ul>
       </div>
     </div>
@@ -188,102 +188,102 @@
   <article class="step">
     <div class="n">4</div>
     <div>
-      <h3>開啟開發者模式</h3>
+      <h3>打开开发者模式</h3>
       <p>在 iPhone 上前往:</p>
-      <div class="path">設定<b>›</b>隱私權與安全性<b>›</b>開發者模式</div>
-      <p>打開開關,iPhone 會要求重新啟動。重啟後再確認一次「啟用」並輸入密碼。</p>
+      <div class="path">设置<b>›</b>隐私权与安全性<b>›</b>开发者模式</div>
+      <p>打开开关,iPhone 会要求重新启动。重启后再确认一次「启用」并输入密码。</p>
       <div class="note ok">
-        <b class="t">設定裡找不到「開發者模式」</b>
-        iOS 16 以上預設不顯示這個選項。用 USB 把 iPhone 連上 LocWarp,到程式上方的「<strong>設定</strong>」頁按「<strong>開啟開發者模式</strong>」。接著在 iPhone 上把「設定」App 完全關掉再重開,進到「隱私權與安全性」往下拉就會看到。
+        <b class="t">设置里找不到「开发者模式」</b>
+        iOS 16 以上默认不显示这个选项。用 USB 把 iPhone 连上 LocWarp,到程序上方的「<strong>设置</strong>」页按「<strong>打开开发者模式</strong>」。接著在 iPhone 上把「设置」App 完全关掉再重开,进到「隐私权与安全性」往下拉就会看到。
       </div>
     </div>
   </article>
 
   <div class="done">
     <b>完成</b>
-    開啟 LocWarp、USB 接上 iPhone,程式會自動抓到裝置,在地圖上按右鍵就能瞬移。要改用無線時,到「連線」頁啟動 WiFi Tunnel,成功後即可拔掉 USB(需 iOS 17 以上,且先用 USB 配對過一次)。
+    打开 LocWarp、USB 接上 iPhone,程序会自动抓到设备,在地图上按右键就能瞬移。要改用无线时,到「连接」页启动 WiFi Tunnel,成功后即可拔掉 USB(需 iOS 17 以上,且先用 USB 配对过一次)。
   </div>
 
-  <h2 class="sec" id="faq">常見問題</h2>
+  <h2 class="sec" id="faq">常见问题</h2>
 
   <div class="note danger">
-    <b class="t">打開程式直接閃退、黑畫面或卡住</b>
-    通常是顯示卡驅動與硬體加速不合。對桌面的 LocWarp 捷徑按右鍵 › 內容 › 目標,在最後面(結尾引號之後)空一格補上:
+    <b class="t">打开程序直接闪退、黑画面或卡住</b>
+    通常是显示卡驱动与硬件加速不合。对桌面的 LocWarp 捷径按右键 › 内容 › 目标,在最后面(结尾引号之后)空一格补上:
     <span class="flag">--no-sandbox --disable-gpu --in-process-gpu</span>
-    按「確定」後再從這個捷徑開啟。
+    按「确定」后再从这个捷径打开。
   </div>
 
   <div class="tbl">
     <table>
-      <tr><th>畫面殘影或黑畫面</th><td>到「設定」頁關閉硬體加速,重啟程式。</td></tr>
-      <tr><th>Tunnel 啟動後連不上</th><td>確認以系統管理員身分啟動,暫時關閉 VPN 或第三方防火牆再試。</td></tr>
-      <tr><th>WiFi 自動偵測找不到裝置</th><td>確認在同一個 WiFi 網段,路由器沒開裝置隔離(AP isolation)。可改為手動輸入 IP。</td></tr>
-      <tr><th>WiFi Tunnel 螢幕暗掉就斷線</th><td>把 iPhone 的「自動鎖定」設為永不並接上充電,或在 LocWarp 開啟「螢幕暗掉維持連線」。</td></tr>
-      <tr><th>No such service: dtservicehub</th><td>DDI 沒掛上。失敗時先關閉開發者模式、重開機、再開啟,然後重新掛載。</td></tr>
-      <tr><th>國旗或地名沒出現</th><td>這兩項來自免費公共服務,偶爾會暫時無回應,稍後再瞬移一次即可。</td></tr>
+      <tr><th>画面残影或黑画面</th><td>到「设置」页关闭硬件加速,重启程序。</td></tr>
+      <tr><th>Tunnel 启动后连不上</th><td>确认以系统管理员身份启动,暂时关闭 VPN 或第三方防火墙再试。</td></tr>
+      <tr><th>WiFi 自动检测找不到设备</th><td>确认在同一个 WiFi 网段,路由器没开设备隔离(AP isolation)。可改为手动输入 IP。</td></tr>
+      <tr><th>WiFi Tunnel 屏幕暗掉就断线</th><td>把 iPhone 的「自动锁定」设为永不并接上充电,或在 LocWarp 打开「屏幕暗掉维持连接」。</td></tr>
+      <tr><th>No such service: dtservicehub</th><td>DDI 没挂上。失败时先关闭开发者模式、重开机、再打开,然后重新挂载。</td></tr>
+      <tr><th>国旗或地名没出现</th><td>这两项来自免费公共服务,偶尔会暂时无回应,稍后再瞬移一次即可。</td></tr>
     </table>
   </div>
-  <p class="lead" style="margin-top:12px">回報問題請附上 iOS 版本、連線方式,以及 <code>~/.locwarp/logs/backend.log</code>。狀態列的「Log 資料夾」按鈕可以直接開啟該資料夾。</p>
+  <p class="lead" style="margin-top:12px">回报问题请附上 iOS 版本、连接方式,以及 <code>~/.locwarp/logs/backend.log</code>。状态列的「Log 文件夹」按钮可以直接打开该文件夹。</p>
 
-  <h2 class="sec" id="features">功能簡介</h2>
+  <h2 class="sec" id="features">功能简介</h2>
 
-  <h4>移動模式</h4>
+  <h4>移动模式</h4>
   <div class="tbl">
     <table>
-      <tr><th>瞬間移動</th><td>直接跳到指定座標。</td></tr>
-      <tr><th>導航移動</th><td>沿真實道路前往目的地,走路、腳踏車、開車三檔速度。</td></tr>
-      <tr><th>多點路徑</th><td>依序經過多個點,每站可停留(預設隨機 5 到 20 秒)。圈數設 0 跑一趟,設 N 繞 N 圈,留空無限循環。可勾「點對點跳躍」改成逐點瞬移。</td></tr>
-      <tr><th>花農專用</th><td>在每個路徑點周圍繞圈。繞圈距離、段數、圈數、輪數、前後等待都可自訂,點與點之間可走過去或瞬移。</td></tr>
-      <tr><th>隨機漫步</th><td>在指定半徑內隨機漫遊,每段停頓可調。</td></tr>
-      <tr><th>搖桿操控</th><td>以方向與力度即時操控,支援 WASD 與方向鍵。</td></tr>
+      <tr><th>瞬间移动</th><td>直接跳到指定坐标。</td></tr>
+      <tr><th>导航移动</th><td>沿真实道路前往目的地,走路、自行车、开车三档速度。</td></tr>
+      <tr><th>多点路径</th><td>依序经过多个点,每站可停留(默认随机 5 到 20 秒)。圈数设 0 跑一趟,设 N 绕 N 圈,留空无限循环。可勾「点对点跳跃」改成逐点瞬移。</td></tr>
+      <tr><th>花农专用</th><td>在每个路径点周围绕圈。绕圈距离、段数、圈数、轮数、前后等待都可自订,点与点之间可走过去或瞬移。</td></tr>
+      <tr><th>随机漫步</th><td>在指定半径内随机漫游,每段停顿可调。</td></tr>
+      <tr><th>摇杆操控</th><td>以方向与力度即时操控,支持 WASD 与方向键。</td></tr>
     </table>
   </div>
 
   <h4>速度</h4>
   <ul class="plain">
-    <li>三檔預設:走路 10.8、腳踏車 19.8、開車 60 km/h。</li>
-    <li>可輸入任意固定速度,或最小到最大的隨機範圍,每段路重新抽一次。</li>
-    <li>移動中可以改速度後「套用新速度」,不用停下重來。</li>
+    <li>三档默认:走路 10.8、自行车 19.8、开车 60 km/h。</li>
+    <li>可输入任意固定速度,或最小到最大的随机范围,每段路重新抽一次。</li>
+    <li>移动中可以改速度后「套用新速度」,不用停下重来。</li>
   </ul>
 
-  <h4>路徑來源</h4>
-  <p class="lead">四個免費免註冊的引擎可切換:OSRM 公用 demo(預設)、OSRM FOSSGIS、Valhalla、BRouter。任一引擎失敗時該段自動改走直線,也可直接勾「使用直線路徑」。多點路徑有「最佳順序」一鍵算出最短走訪順序。</p>
+  <h4>路径来源</h4>
+  <p class="lead">四个免费免注册的引擎可切换:OSRM 公用 demo(默认)、OSRM FOSSGIS、Valhalla、BRouter。任一引擎失败时该段自动改走直线,也可直接勾「使用直线路径」。多点路径有「最佳顺序」一键算出最短走访顺序。</p>
 
-  <h4>連線</h4>
+  <h4>连接</h4>
   <ul class="plain">
-    <li><strong>USB</strong>:插上自動連線,iPhone 鎖定螢幕不受影響。拔除約 4 秒內偵測,重插自動恢復。</li>
-    <li><strong>WiFi Tunnel</strong>(iOS 17 以上):自動偵測用 mDNS,找不到再掃描區網。連過的 IP 會記住,可「釘選」裝置自動連線與重試。</li>
-    <li><strong>多裝置</strong>:最多同時三台,所有動作同步套用,隨機漫步走一樣的路線。</li>
+    <li><strong>USB</strong>:插上自动连接,iPhone 锁定屏幕不受影响。拔除约 4 秒内检测,重插自动恢复。</li>
+    <li><strong>WiFi Tunnel</strong>(iOS 17 以上):自动检测用 mDNS,找不到再扫描局域网。连过的 IP 会记住,可「钉选」设备自动连接与重试。</li>
+    <li><strong>多设备</strong>:最多同时三台,所有动作同步套用,随机漫步走一样的路线。</li>
   </ul>
 
-  <h4>地圖與座標</h4>
+  <h4>地图与坐标</h4>
   <ul class="plain">
-    <li>圖層:OSM、Google 圖磚(測試)、ESRI 街道與衛星、OpenFreeMap Liberty / Bright / Positron、VersaTiles、NLSC 台灣電子地圖、GSI 日本地理院地圖。全部免 API key。</li>
-    <li>狀態列顯示目前模擬位置的國旗、地名、天氣與溫度,跨時區時標出時差。</li>
-    <li>座標收藏:自動帶入地名與國旗,可分類、排序、拖曳,JSON 與 GPX 匯入匯出,數萬筆顯示在地圖上也不卡。</li>
-    <li>路線可分類儲存並直接載入,支援 GPX 與 JSON。</li>
-    <li>地址搜尋:免費來源(OpenStreetMap 或 Photon),或自備 Google Geocoding 金鑰。</li>
-    <li>使用者圖示可換成 6 組內建角色或上傳自己的 PNG。</li>
+    <li>图层:OSM、Google 瓦片(测试)、ESRI 街道与卫星、OpenFreeMap Liberty / Bright / Positron、VersaTiles、NLSC 台湾电子地图、GSI 日本地理院地图。全部免 API key。</li>
+    <li>状态列显示当前模拟位置的国旗、地名、天气与温度,跨时区时标出时差。</li>
+    <li>坐标收藏:自动带入地名与国旗,可分类、排序、拖动,JSON 与 GPX 导入导出,数万笔显示在地图上也不卡。</li>
+    <li>路线可分类保存并直接加载,支持 GPX 与 JSON。</li>
+    <li>地址搜索:免费来源(OpenStreetMap 或 Photon),或自备 Google Geocoding 密钥。</li>
+    <li>用户图示可换成 6 组内建角色或上传自己的 PNG。</li>
   </ul>
 
-  <h4>手機網頁操控</h4>
-  <p class="lead">按狀態列的「手機操控」會顯示區網網址與 6 位數 PIN,手機瀏覽器輸入後可瞬移、導航、搜尋地址、輸入座標、停止與還原。手機要與電腦在同一個 WiFi,電腦防火牆放行 8777 port。</p>
+  <h4>手机网页操控</h4>
+  <p class="lead">按状态列的「手机操控」会显示局域网网址与 6 位数 PIN,手机浏览器输入后可瞬移、导航、搜索地址、输入坐标、停止与还原。手机要与电脑在同一个 WiFi,电脑防火墙放行 8777 port。</p>
 
   <h4>其他</h4>
   <ul class="plain">
-    <li><strong>一鍵還原</strong>清除虛擬定位。「停止」只結束移動,定位仍保留,要恢復真實 GPS 請按還原。</li>
-    <li>Cooldown 依瞬移距離自動計算冷卻時間。</li>
-    <li>介面可在繁體中文與 English 之間切換。</li>
-    <li>所有資料存在 <code>~/.locwarp/</code>,重新安裝不會遺失。</li>
+    <li><strong>一键还原</strong>清除虚拟定位。「停止」只结束移动,定位仍保留,要恢复真实 GPS 请按还原。</li>
+    <li>Cooldown 依瞬移距离自动计算冷却时间。</li>
+    <li>界面可在简体中文与 English 之间切换。</li>
+    <li>所有资料存在 <code>~/.locwarp/</code>,重新安装不会遗失。</li>
   </ul>
 
-  <h4>技術組成</h4>
+  <h4>技术组成</h4>
   <div class="tbl">
     <table>
       <tr><th>前端</th><td>Electron 44、React 19、TypeScript、Vite、MapLibre GL 6</td></tr>
-      <tr><th>後端</th><td>Python 3.13、FastAPI、pymobiledevice3 11</td></tr>
-      <tr><th>WiFi Tunnel</th><td>pymobiledevice3 TCP tunnel 搭配 pytun-pmd3 建立 TUN 介面,wintun.dll 已打包</td></tr>
-      <tr><th>支援版本</th><td>iOS 17 以上為主要支援,已驗證到 iOS 27.0。iOS 16.x 由社群維護,iOS 15 以下不支援。</td></tr>
+      <tr><th>后端</th><td>Python 3.13、FastAPI、pymobiledevice3 11</td></tr>
+      <tr><th>WiFi Tunnel</th><td>pymobiledevice3 TCP tunnel 搭配 pytun-pmd3 建立 TUN 接口,wintun.dll 已打包</td></tr>
+      <tr><th>支持版本</th><td>iOS 17 以上为主要支持,已验证到 iOS 27.0。iOS 16.x 由社群维护,iOS 15 以下不支持。</td></tr>
     </table>
   </div>
 
@@ -293,7 +293,7 @@
       <a href="https://github.com/keezxc1223/locwarp/releases">Releases</a> ·
       <a href="https://github.com/keezxc1223/locwarp/issues">Issues</a>
     </div>
-    <div>本頁感謝社群使用者回饋整理而成 · 2026.09</div>
+    <div>本页感谢社群用户回馈整理而成 · 2026.09</div>
   </footer>
 
 </main>

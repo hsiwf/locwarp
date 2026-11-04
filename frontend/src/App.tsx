@@ -291,7 +291,7 @@ const App: React.FC = () => {
 
   const handleGenerateAllRandom = useCallback(() => {
     const radius = Math.floor(50 + Math.random() * 950)  // 50–1000 m
-    const count = Math.floor(3 + Math.random() * 8)       // 3–10 點
+    const count = Math.floor(3 + Math.random() * 8)       // 3–10 点
     setWpGenRadius(radius)
     setWpGenCount(count)
     generateWaypoints(radius, count)
@@ -770,7 +770,7 @@ const App: React.FC = () => {
   // dropped, lines without a coord pair count as invalid.
   const [bulkPasteOpen, setBulkPasteOpen] = useState(false)
   const [bulkPasteText, setBulkPasteText] = useState('')
-  const [bulkPasteCategory, setBulkPasteCategory] = useState<string>(() => bm.categories[0]?.name || '預設')
+  const [bulkPasteCategory, setBulkPasteCategory] = useState<string>(() => bm.categories[0]?.name || '默认')
   const [bulkPasteBusy, setBulkPasteBusy] = useState(false)
   const parseBulkPaste = useCallback((raw: string): { valid: Array<{ lat: number; lng: number }>; invalidCount: number; totalLines: number } => {
     const lines = raw.split(/\r?\n/).map((l) => l.trim()).filter((l) => l.length > 0)
@@ -983,7 +983,7 @@ const App: React.FC = () => {
       return
     }
     const udids = device.connectedDevices.map((d) => d.udid)
-    // 圈數: 0 = single pass (original 多點導航 → multiStop backend),
+    // 圈数: 0 = single pass (original 多点导航 → multiStop backend),
     // null = infinite loop, N>0 = N laps (both via startLoop backend).
     if (sim.loopLapCount === 0) {
       if (udids.length >= 2) {
@@ -1002,8 +1002,8 @@ const App: React.FC = () => {
     }
   }, [sim, device, showToast, t])
 
-  // 種花模式 start: circle every placed waypoint. Independent from the
-  // 多點路徑 (Loop) start path — it has its own backend handler / settings.
+  // 种花模式 start: circle every placed waypoint. Independent from the
+  // 多点路径 (Loop) start path — it has its own backend handler / settings.
   const handleStartFlower = useCallback(async () => {
     const route = sim.waypoints
     if (route.length < 1) {
@@ -1063,7 +1063,7 @@ const App: React.FC = () => {
 
   const handleStop = useCallback(async () => {
     // Stop the active movement only — keep the simulated location in place
-    // so the device stays where the user paused it. Use the 一鍵還原 button
+    // so the device stays where the user paused it. Use the 一键还原 button
     // separately to clear the simulated location and restore real GPS.
     const udids = device.connectedDevices.map((d) => d.udid)
     if (sim.mode === SimMode.Joystick && udids.length >= 2) {
@@ -1101,8 +1101,8 @@ const App: React.FC = () => {
     if (!routeLoadConfirm) return
     const { waypoints } = routeLoadConfirm
     // Loading a route always means the user wants to run it, so switch into
-    // the route (路線) mode and fill the waypoint list atomically. Otherwise
-    // the app stays in 瞬間移動 (the launch default) and pressing 開始 does
+    // the route (路线) mode and fill the waypoint list atomically. Otherwise
+    // the app stays in 瞬间移动 (the launch default) and pressing 开始 does
     // nothing because that mode has no waypoint-route handler.
     sim.loadRoute(waypoints)
     // Remember which route is loaded so the panel can show its name.
@@ -1111,7 +1111,7 @@ const App: React.FC = () => {
       const first = waypoints[0]
       const udids = device.connectedDevices.map((d) => d.udid)
       // Match wpFly flow: set current position + teleport directly so the
-      // device GPS lands on the start point without leaving 路線 mode.
+      // device GPS lands on the start point without leaving 路线 mode.
       sim.setCurrentPosition({ lat: first.lat, lng: first.lng })
       if (udids.length > 0) {
         try { await sim.teleportAll(udids, first.lat, first.lng) } catch { /* ignore */ }
@@ -1406,7 +1406,7 @@ const App: React.FC = () => {
     ? { lat: sim.destination.lat, lng: sim.destination.lng }
     : null
 
-  // 種花模式 map preview: one segmented polygon per waypoint, matching the
+  // 种花模式 map preview: one segmented polygon per waypoint, matching the
   // backend's circle geometry (radius + segment count) so the user sees
   // exactly what will be walked. Recomputed when the points / settings change.
   const flowerPreview = useMemo(() => {
@@ -1427,7 +1427,7 @@ const App: React.FC = () => {
     })
   }, [sim.mode, sim.waypoints, sim.flowerRadius, sim.flowerSegments])
 
-  // 種花模式 estimated total trip time (seconds): every pre/post wait + the
+  // 种花模式 estimated total trip time (seconds): every pre/post wait + the
   // walked approach between flowers (straight-line approximation; teleport
   // approaches cost no travel time) + the walked circle length, across all
   // rounds. Shown live in the panel so the user knows roughly how long the
@@ -1806,7 +1806,7 @@ const App: React.FC = () => {
           onBookmarkImport={handleBookmarkImport}
           onBookmarkBulkPaste={() => {
             setBulkPasteText('')
-            setBulkPasteCategory(bm.categories[0]?.name || '預設')
+            setBulkPasteCategory(bm.categories[0]?.name || '默认')
             setBulkPasteOpen(true)
           }}
           bookmarkExportUrl={api.bookmarksExportUrl()}
@@ -1941,7 +1941,7 @@ const App: React.FC = () => {
                 </div>
               )}
               {sim.mode === SimMode.Loop && (() => {
-                const lap = sim.loopLapCount // null = 無限, 0 = 單程(原多點), N = N 圈
+                const lap = sim.loopLapCount // null = 无限, 0 = 单程(原多点), N = N 圈
                 return (
                 <div style={{
                   marginBottom: 6, fontSize: 11,
@@ -1978,8 +1978,8 @@ const App: React.FC = () => {
                 )
               })()}
               <div style={{ marginBottom: 6, fontSize: 11 }}>
-                {/* Random-waypoint generator (半徑 / 數量 / 隨機產生 / 全隨機) is
-                    for 多點路徑 only; 種花模式 places flowers by click / paste. */}
+                {/* Random-waypoint generator (半径 / 数量 / 随机产生 / 全随机) is
+                    for 多点路径 only; 种花模式 places flowers by click / paste. */}
                 {sim.mode === SimMode.Loop && (
                 <>
                 <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginBottom: 4 }}>
@@ -2548,7 +2548,7 @@ const App: React.FC = () => {
                   <textarea
                     value={bulkPasteText}
                     onChange={(e) => setBulkPasteText(e.target.value)}
-                    placeholder="25.0478 121.5319 台北車站&#10;24.1456 120.6839 台中"
+                    placeholder="25.0478 121.5319 台北车站&#10;24.1456 120.6839 台中"
                     style={{
                       width: '100%', boxSizing: 'border-box',
                       minHeight: 160, maxHeight: 240, resize: 'vertical',

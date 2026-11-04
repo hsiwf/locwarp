@@ -50,7 +50,7 @@ export interface Preset {
 export const PRESETS: Preset[] = [
   { id: 'hare', label: '兔兔', url: hareUrl },
   { id: 'dog',  label: '小狗', url: dogUrl },
-  { id: 'cat',  label: '小貓', url: catUrl },
+  { id: 'cat',  label: '小猫', url: catUrl },
   { id: 'fox',  label: '狐狸', url: foxUrl },
   { id: 'boy',  label: '男孩', url: boyUrl },
   { id: 'girl', label: '女孩', url: girlUrl },

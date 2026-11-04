@@ -297,19 +297,19 @@ function showBackendMissingDialog(exe, detail) {
   const zh = (app.getLocale() || '').toLowerCase().startsWith('zh')
   const msg = zh
     ? {
-        title: 'LocWarp 無法啟動',
-        message: '找不到背景服務 (locwarp-backend.exe)',
+        title: 'LocWarp 无法启动',
+        message: '找不到后台服务 (locwarp-backend.exe)',
         detail:
-          '這個檔案通常是被防毒軟體 (Windows Defender 或第三方防毒) 判定為可疑並隔離刪除。\n\n' +
-          '解決步驟：\n' +
-          '1. 開啟「Windows 安全性」→「病毒與威脅防護」→「防護歷程記錄」，若有 LocWarp 相關項目請按「還原」。\n' +
-          '2. 在「排除項目」中新增資料夾：\n' +
+          '这个文件通常是被防毒软件 (Windows Defender 或第三方防毒) 判定为可疑并隔离删除。\n\n' +
+          '解决步骤：\n' +
+          '1. 打开「Windows 安全性」→「病毒和威胁防护」→「保护历史记录」，若有 LocWarp 相关项目请按「还原」。\n' +
+          '2. 在「排除项」中新增文件夹：\n' +
           '   C:\\Program Files\\LocWarp\n' +
-          '3. 移除 LocWarp 後重新安裝 (安裝檔請以系統管理員身分執行)。\n\n' +
-          '若使用第三方防毒，請先將 LocWarp 加入白名單再重裝。\n\n' +
-          `預期路徑：\n${exe}` +
+          '3. 移除 LocWarp 后重新安装 (安装包请以系统管理员身份执行)。\n\n' +
+          '若使用第三方防毒，请先将 LocWarp 加入白名单再重装。\n\n' +
+          `预期路径：\n${exe}` +
           (detail ? `\n\n${detail}` : ''),
-        buttons: ['開啟安裝資料夾', '關閉'],
+        buttons: ['打开安装文件夹', '关闭'],
       }
     : {
         title: 'LocWarp cannot start',
